@@ -207,7 +207,7 @@
   @include gradient-vertical($primaryColor, $secondaryColor);
   text-shadow: 0 -1px 0 rgba(0,0,0,.25);
   border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
-  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
+  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 0.15);
 }
 
 // Reset filters for IE
@@ -217,7 +217,7 @@
 
 // Opacity
 @mixin opacity($opacity: 100) {
-	filter: "alpha(opacity=#{$opacity})";
+	filter: alpha(opacity=#{$opacity});
 	-khtml-opacity: $opacity / 100;
 	  -moz-opacity: $opacity / 100;
 	       opacity: $opacity / 100;

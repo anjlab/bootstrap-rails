@@ -98,7 +98,7 @@ a {
 
 // Offset column options
 @for $i from 1 through 12 {
-  .offset#{i}   { @include offset($i); }
+  .offset#{$i} { @include offset($i); }
 }
 
 // Unique column sizes for 16-column grid
