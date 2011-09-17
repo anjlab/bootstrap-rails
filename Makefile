@@ -1,7 +1,7 @@
 VERSION=1.2.0
 DATE=$(shell DATE)
-BOOTSTRAP = ./bootstrap-${VERSION}.css
-BOOTSTRAP_MIN = ./bootstrap-${VERSION}.min.css
+BOOTSTRAP = ./bootstrap.css
+BOOTSTRAP_MIN = ./bootstrap.min.css
 BOOTSTRAP_SCSS = ./lib/bootstrap.scss
 SASS_COMPESSOR ?= `which sass`
 WATCHR ?= `which watchr`
