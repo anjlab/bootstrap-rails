@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split("\n")
   gem.files.reject! { |fn| fn.include? "vendor/twitter" } 
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  gem.name          = "bootstrap-rails"
+  gem.name          = "anjlab-bootstrap-rails"
   gem.require_paths = ["lib"]
   gem.version       = Bootstrap::Rails::VERSION
 
