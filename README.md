@@ -9,52 +9,63 @@ anjlab-bootstrap-rails project integrates Bootstrap CSS (with SASS flavour) and 
 ## Rails 3.1
 Include Bootstrap in Gemfile;
 
-    gem 'anjlab-bootstrap-rails'
-    
+``` ruby
+gem 'anjlab-bootstrap-rails'
+```
+
 or you can install from latest build;
 
-    gem 'anjlab-bootstrap-rails', :git => 'http://github.com/anjlab/bootstrap-rails.git'
-    
+``` ruby
+gem 'anjlab-bootstrap-rails', :git => 'http://github.com/anjlab/bootstrap-rails.git'
+```
+
 and run bundle install.
 
 ## Stylesheets
 
 Add necessary stylesheet file to app/assets/stylesheets/application.css
 
-    *= require bootstrap
+``` css
+*= require bootstrap
+```
 
 You can override boostrapr variables:
 
+``` csss
+// Create app/assets/stylesheets/bootstrap.scss
+// CSS Reset
+@import "reset.scss";
 
-    // Create app/assets/stylesheets/bootstrap.scss
-    // CSS Reset
-    @import "reset.scss";
+// Core variables and mixins
+@import "variables.scss"; // Modify this for custom colors, font-sizes, etc
 
-    // Core variables and mixins
-    @import "variables.scss"; // Modify this for custom colors, font-sizes, etc
-    $linkColor: red; // Make all links red
+$linkColor: red; // Make all links red
 
-    @import "mixins.scss";
+@import "mixins.scss";
 
-    // Grid system and page structure
-    @import "scaffolding.scss";
+// Grid system and page structure
+@import "scaffolding.scss";
 
-    // Styled patterns and elements
-    @import "type.scss";
-    @import "forms.scss";
-    @import "tables.scss";
-    @import "patterns.scss";
+// Styled patterns and elements
+@import "type.scss";
+@import "forms.scss";
+@import "tables.scss";
+@import "patterns.scss";
+```
 
 ## Javascripts
 
 Add necessary javascripts files to app/assets/javascripts/application.js
 
-    //= require bootstrap
+``` javascript
+//= require bootstrap
+```
         
 ## Thanks
 Thanks Twitter for Bootstrap
 http://twitter.github.com/bootstrap
-Inspired by Seyhun Akyürek and his (twitter-bootstrap-rails gem)[https://github.com/seyhunak/twitter-bootstrap-rails]
+
+Inspired by Seyhun Akyürek and his [twitter-bootstrap-rails gem](https://github.com/seyhunak/twitter-bootstrap-rails)
 
 ## License
 Copyright (c) 2011 AnjLab
