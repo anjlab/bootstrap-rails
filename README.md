@@ -16,7 +16,7 @@ gem 'anjlab-bootstrap-rails'
 or you can install from latest build;
 
 ``` ruby
-gem 'anjlab-bootstrap-rails', :git => 'http://github.com/anjlab/bootstrap-rails.git'
+gem 'anjlab-bootstrap-rails', :git => 'git://github.com/anjlab/bootstrap-rails.git'
 ```
 
 and run bundle install.
@@ -55,10 +55,20 @@ $linkColor: red; // Make all links red
 
 ## Javascripts
 
-Add necessary javascripts files to app/assets/javascripts/application.js
+Add necessary javascript(s) files to app/assets/javascripts/application.js
 
 ``` javascript
+// Include all twitter's javavascripts
 //= require bootstrap
+
+// Or peek any of them yourself
+//= require bootstrap-alerts
+//= require bootstrap-dropdown
+//= require bootstrap-modal
+//= require bootstrap-popover
+//= require bootstrap-scrollspy
+//= require bootstrap-tabs
+//= require bootstrap-twipsy
 ```
         
 ## Thanks
