@@ -10,13 +10,14 @@ anjlab-bootstrap-rails project integrates Bootstrap CSS (with SASS flavour) and 
 Include Bootstrap in Gemfile;
 
 ``` ruby
-gem 'anjlab-bootstrap-rails'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
 ```
 
 or you can install from latest build;
 
 ``` ruby
-gem 'anjlab-bootstrap-rails', :git => 'git://github.com/anjlab/bootstrap-rails.git'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :git => 'git://github.com/anjlab/bootstrap-rails.git'
 ```
 
 and run bundle install.
