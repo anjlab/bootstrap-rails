@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["yury.korolev@gmail.com"]
   gem.description   = %q{Twitter Bootstrap CSS (with SASS flavour) and JS toolkits for Rails 3 projects}
   gem.summary       = %q{Bootstrap CSS (with SASS flavour) and JS toolkits for Rails 3 projects}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/anjlab/bootstrap-rails"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
