@@ -65,7 +65,7 @@ Add necessary javascripts files to app/assets/javascripts/application.js
 Thanks Twitter for Bootstrap
 http://twitter.github.com/bootstrap
 
-Inspired by Seyhun Akyürek and his (twitter-bootstrap-rails gem)[https://github.com/seyhunak/twitter-bootstrap-rails]
+Inspired by Seyhun Akyürek and his [twitter-bootstrap-rails gem](https://github.com/seyhunak/twitter-bootstrap-rails)
 
 ## License
 Copyright (c) 2011 AnjLab
