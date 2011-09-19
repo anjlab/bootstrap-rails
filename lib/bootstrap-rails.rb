@@ -2,6 +2,10 @@ require "bootstrap-rails/version"
 
 module Bootstrap
   module Rails
-    # Your code goes here...
+    if ::Rails.version < "3.1"
+      require "bootstrap-rails/railtie"
+    else
+      require "bootstrap-rails/engine"
+    end
   end
 end
