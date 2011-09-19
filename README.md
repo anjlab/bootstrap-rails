@@ -9,16 +9,9 @@ To get started -- checkout http://twitter.github.com/bootstrap!
 Usage
 -----
 
-You can use Twitter Bootstrap in one of two ways: just drop the compiled CSS into any new project and start cranking, or run LESS on your site and compile on the fly like a boss.
+With Rails 3.1 use [anjlab-bootstrap-rails gem](https://github.com/anjlab/bootstrap-rails)
 
-Here's what the LESS version looks like:
-
-``` html
-<link rel="stylesheet/less" type="text/css" href="lib/bootstrap.less">
-<script src="less.js" type="text/javascript"></script>
-```
-
-Or if you prefer, the standard css way:
+If you prefer, the standard css way:
 
 ``` html
 <link rel="stylesheet" type="text/css" href="bootstrap.css">
