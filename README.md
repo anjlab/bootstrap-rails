@@ -58,7 +58,7 @@ $linkColor: red; // Make all links red
 Add necessary javascript(s) files to app/assets/javascripts/application.js
 
 ``` javascript
-// Include all twitter's javavascripts
+// Include all twitter's javascripts
 //= require bootstrap
 
 // Or peek any of them yourself
