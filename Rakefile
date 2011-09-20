@@ -11,7 +11,7 @@ task "update-twitter" do
   bootstrap_scss = File.read("vendor/assets/stylesheets/bootstrap.scss")
 
   bootstrap_scss.gsub!(/@VERSION/, "v#{boostrap_version}")
-  bootstrap_scss.gsub!(/@DATE/, Time.now.to_s)
+  bootstrap_scss.gsub!(/^.*@DATE.*/, " *")
 
   File.open("vendor/assets/stylesheets/bootstrap.scss", "w") do |f|
     f.write(bootstrap_scss)
