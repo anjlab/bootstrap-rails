@@ -35,7 +35,7 @@ task "update-twitter" do
   File.open("vendor/assets/javascripts/bootstrap.js", "w") do |f|
     f.write "// Bootstrap v#{boostrap_version}\n"
     js_list.each do |js|
-      f.write "//= #{js}\n"
+      f.write "//= require #{js}\n"
     end
   end
 end
