@@ -1,8 +1,8 @@
 // Bootstrap v1.3.0
-//= require bootstrap-alerts.js
-//= require bootstrap-dropdown.js
-//= require bootstrap-modal.js
-//= require bootstrap-popover.js
-//= require bootstrap-scrollspy.js
-//= require bootstrap-tabs.js
-//= require bootstrap-twipsy.js
+//= bootstrap-alerts.js
+//= bootstrap-dropdown.js
+//= bootstrap-modal.js
+//= bootstrap-tabs.js
+//= bootstrap-scrollspy.js
+//= bootstrap-twipsy.js
+//= bootstrap-popover.js

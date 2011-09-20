@@ -23,9 +23,19 @@ task "update-twitter" do
     cp file, "vendor/assets/javascripts/", :verbose => true
   end
 
-  bootstrap_js = js_files.map{|f| "//= require #{File.basename(f)}"}.join("\n")
+  js_priorities = {}
+  js_files.each {|f| js_priorities[File.basename(f)] = 0}
+
+  # popover depend on twipsy
+  js_priorities["bootstrap-twipsy.js"]  = 1
+  js_priorities["bootstrap-popover.js"] = 2
+  
+  js_list = js_priorities.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
+  
   File.open("vendor/assets/javascripts/bootstrap.js", "w") do |f|
     f.write "// Bootstrap v#{boostrap_version}\n"
-    f.write(bootstrap_js)
+    js_list.each do |js|
+      f.write "//= #{js}\n"
+    end
   end
 end
