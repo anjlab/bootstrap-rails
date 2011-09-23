@@ -66,10 +66,10 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 //= require bootstrap-alerts
 //= require bootstrap-dropdown
 //= require bootstrap-modal
+//= require bootstrap-twipsy
 //= require bootstrap-popover
 //= require bootstrap-scrollspy
 //= require bootstrap-tabs
-//= require bootstrap-twipsy
 ```
         
 ## Thanks
