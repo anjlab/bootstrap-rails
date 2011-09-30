@@ -60,7 +60,7 @@
     if ( options ) {
       $.extend( this.settings, options )
 
-      if ( options.show ) {
+      if ( this.settings.show ) {
         this.show()
       }
     }
@@ -81,17 +81,23 @@
 
         escape.call(this)
         backdrop.call(this, function () {
+          var transition = $.support.transition && that.$element.hasClass('fade')
+
           that.$element
             .appendTo(document.body)
             .show()
 
-          if ($.support.transition && that.$element.hasClass('fade')) {
+          if (transition) {
             that.$element[0].offsetWidth // force reflow
           }
 
           that.$element
             .addClass('in')
-            .trigger('shown')
+
+          transition ?
+            that.$element.one(transitionEnd, function () { that.$element.trigger('shown') }) :
+            that.$element.trigger('shown')
+
         })
 
         return this
@@ -99,6 +105,10 @@
 
     , hide: function (e) {
         e && e.preventDefault()
+
+        if ( !this.isShown ) {
+          return this
+        }
 
         var that = this
         this.isShown = false
@@ -220,7 +230,7 @@
   $.fn.modal.defaults = {
     backdrop: false
   , keyboard: false
-  , show: true
+  , show: false
   }
 
 

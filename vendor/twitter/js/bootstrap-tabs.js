@@ -21,27 +21,33 @@
 !function( $ ){
 
   function activate ( element, container ) {
-    container.find('.active').removeClass('active')
+    container.find('> .active').removeClass('active')
     element.addClass('active')
   }
 
   function tab( e ) {
     var $this = $(this)
-      , href = $this.attr('href')
       , $ul = $this.closest('ul')
-      , $controlled
+      , href = $this.attr('href')
+      , previous
 
     if (/^#\w+/.test(href)) {
       e.preventDefault()
 
-      if ($this.hasClass('active')) {
+      if ($this.parent('li').hasClass('active')) {
         return
       }
 
+      previous = $ul.find('.active a')[0]
       $href = $(href)
 
       activate($this.parent('li'), $ul)
       activate($href, $href.parent())
+
+      $this.trigger({
+        type: 'change'
+      , relatedTarget: previous
+      })
     }
   }
 
