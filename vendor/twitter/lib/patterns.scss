@@ -731,15 +731,15 @@ input[type=submit].btn {
     text-decoration: none;
   }
   a:hover,
-  &.active a {
+  .active a {
     background-color: lighten($blue, 45%);
   }
-  &.disabled a,
-  &.disabled a:hover {
+  .disabled a,
+  .disabled a:hover {
     background-color: transparent;
     color: $grayLight;
   }
-  &.next a {
+  .next a {
     border: 0;
   }
 }
