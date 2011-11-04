@@ -1,5 +1,5 @@
 module Bootstrap
   module Rails
-    VERSION = "0.1.4"
+    VERSION = "1.4.0"
   end
 end
