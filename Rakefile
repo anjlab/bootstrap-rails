@@ -3,7 +3,7 @@ require "bundler/gem_tasks"
 
 desc "Update Twitter's Bootstrap"
 task "update-twitter" do
-  boostrap_version = "1.4.0"
+  boostrap_version = Bootstrap::Rails::VERSION.split("\.")[0..2].join(".")
   Dir["vendor/assets/stylesheets/*.*"].each {|f| FileUtils.rm(f)}
   Dir["vendor/twitter/lib/*.scss"].each do |file|
     cp file, "vendor/assets/stylesheets/", :verbose => true
