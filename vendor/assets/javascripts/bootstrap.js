@@ -1,4 +1,4 @@
-// Bootstrap v1.3.0
+// Bootstrap v1.4.0
 //= require bootstrap-alerts.js
 //= require bootstrap-buttons.js
 //= require bootstrap-dropdown.js
