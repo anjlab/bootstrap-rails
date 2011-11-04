@@ -7,10 +7,8 @@
 // STRUCTURAL LAYOUT
 // -----------------
 
-html, body {
-  background-color: $white;
-}
 body {
+  background-color: $white;
   margin: 0;
   @include font-sans-serif(normal,$basefont,$baseline);
   color: $grayDark;
@@ -29,7 +27,9 @@ body {
   padding-right: 20px;
   @include clearfix;
   > .sidebar {
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 20px;
     width: 220px;
   }
   // TODO in v2: rename this and .popover .content to be more specific
@@ -77,12 +77,12 @@ a {
 
 .row {
   @include clearfix;
-  margin-left: -1 * $gridGutterWidth;
+  margin-left: -$gridGutterWidth;
 }
 
 // Find all .span# classes within .row and give them the necessary properties for grid columns (supported by all browsers back to IE7)
 // Credit to @dhg for the idea
-[class*="span"] {
+.row > [class*="span"] {
   @include gridColumn;
 }
 
@@ -97,8 +97,10 @@ a {
 }
 
 // Offset column options
-@for $i from 1 through 12 {
-  .offset#{$i} { @include offset($i); }
+.row {
+  @for $i from 1 through 12 {
+    & > .offset#{$i} { @include offset($i); }
+  }
 }
 
 // Unique column sizes for 16-column grid
