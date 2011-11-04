@@ -99,7 +99,7 @@ a {
 // Offset column options
 .row {
   @for $i from 1 through 12 {
-    & > .offset#{$i} { @include offset($i); }
+    > .offset#{$i} { @include offset($i); }
   }
 }
 
