@@ -1,4 +1,4 @@
-/* Variables.less
+/* Variables
  * Variables to customize the look and feel of Bootstrap
  * ----------------------------------------------------- */
 
@@ -39,7 +39,7 @@ $siteWidth:         ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gr
 
 // Color Scheme
 // Use this to roll your own color schemes if you like (unused by Bootstrap by default)
-$baseColor:         $blue;                  // Set a base color
+$baseColor:         $blue;                        // Set a base color
 $complement:        adjust-hue($baseColor, 180);  // Determine a complementary color
 $split1:            adjust-hue($baseColor, 158);  // Split complements
 $split2:            adjust-hue($baseColor, -158);
