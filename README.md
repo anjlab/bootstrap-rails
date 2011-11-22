@@ -69,7 +69,21 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 //= require bootstrap-twipsy
 //= require bootstrap-popover
 //= require bootstrap-scrollspy
-//= require bootstrap-tabs
+//= require bootstrap-**tabs**
+```
+
+## Rails Helper
+### topbar(Navigation)
+``` ruby
+- topbar do |bar|
+  = bar.brand_name "YourBrandName",root_path
+  = bar.nav do
+    = bar.item 'label1',               "/url/url"
+    = bar.dropdown "dropdown_menu" do
+      = bar.item 'label2',              "/url2/url2"
+      = bar.item 'label3',              "/url3/url3"
+  = bar.second_nav do     
+    = bar.item 'label4',               "/url4/url4"
 ```
         
 ## Thanks
