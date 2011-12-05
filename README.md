@@ -64,6 +64,7 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 
 // Or peek any of them yourself
 //= require bootstrap-alerts
+//= require bootstrap-buttons
 //= require bootstrap-dropdown
 //= require bootstrap-modal
 //= require bootstrap-twipsy
