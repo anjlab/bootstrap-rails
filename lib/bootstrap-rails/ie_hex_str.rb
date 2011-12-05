@@ -8,8 +8,8 @@ module Sass::Script::Functions
     assert_type color, :Color
     alpha = (color.alpha * 255).round
     alpha = alpha.to_s(16).rjust(2, '0')
-    color_string = color.to_s
-    color_values = color_string.tr('#','').split('')
+    color_string = color.to_s.tr('#','')
+    color_values = color_string.split('')
     
     r, g, b = *color_values
     if color_values.size == 3
