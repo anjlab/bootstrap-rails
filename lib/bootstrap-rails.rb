@@ -1,3 +1,4 @@
+require "rails"
 require "bootstrap-rails/version"
 
 module Bootstrap
