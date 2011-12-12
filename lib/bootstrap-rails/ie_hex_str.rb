@@ -8,13 +8,8 @@ module Sass::Script::Functions
     assert_type color, :Color
     alpha = (color.alpha * 255).round
     alpha = alpha.to_s(16).rjust(2, '0')
-    color_string = color.to_s.tr('#','')
-    color_values = color_string.split('')
-    
-    r, g, b = *color_values
-    if color_values.size == 3
-      color_string = "#{r}#{r}#{g}#{g}#{b}#{b}"
-    end
+    color_string = color.rgb.map {|num| num.to_s(16).rjust(2, '0')} .join
+
     Sass::Script::String.new("##{alpha}#{color_string}")
   end
   declare :ie_hex_str, :args => [:color]
