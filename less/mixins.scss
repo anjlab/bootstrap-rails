@@ -135,7 +135,7 @@
 
 // Site container
 // -------------------------
-.container-fixed() {
+@mixin container-fixed() {
   width: $gridRowWidth;
   margin-left: auto;
   margin-right: auto;
@@ -151,7 +151,7 @@
 }
 
 @mixin grid-system-offset($gridColumnWidth, $gridGutterWidth, $columns) {
-  margin-left: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1)) + (@gridGutterWidth * 2);
+  margin-left: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1)) + ($gridGutterWidth * 2);
 }
 
 @mixin grid-system-grid-column($gridGutterWidth) {
@@ -177,7 +177,7 @@
   .container { @include grid-system-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 12); }
   // Offset column options
   @for $i from 1 through 11 {
-    .offset{$i} { @include grid-system-offset($gridColumnWidth, $gridGutterWidth, $i); }
+    .offset#{$i} { @include grid-system-offset($gridColumnWidth, $gridGutterWidth, $i); }
   }
 }
 
@@ -186,7 +186,8 @@
 
 // Setup the mixins to be used
 @mixin fluid-grid-system-columns($fluidGridGutterWidth, $fluidGridColumnWidth, $columns) {
-  width: 1% * ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
+  //TODO: check floid
+  width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
 }
 @mixin fluid-grid-system-grid-column($fluidGridGutterWidth) {
   float: left;
@@ -428,7 +429,7 @@
 
 // Reset filters for IE
 @mixin reset-filter() {
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
 
@@ -466,7 +467,7 @@
   border-right: $arrowWidth solid transparent;
   border-top: $arrowWidth solid $black;
 }
-@mixin popover-left($arrowWidth: 5px) {
+@mixin popover-arrow-left($arrowWidth: 5px) {
   top: 50%;
   right: 0;
   margin-top: -$arrowWidth;
@@ -474,7 +475,7 @@
   border-bottom: $arrowWidth solid transparent;
   border-left: $arrowWidth solid $black;
 }
-@mixin popover-bottom($arrowWidth: 5px) {
+@mixin popover-arrow-bottom($arrowWidth: 5px) {
   top: 0;
   left: 50%;
   margin-left: -$arrowWidth;
@@ -482,7 +483,7 @@
   border-right: $arrowWidth solid transparent;
   border-bottom: $arrowWidth solid $black;
 }
-@mixin popover-right($arrowWidth: 5px) {
+@mixin popover-arrow-right($arrowWidth: 5px) {
   top: 50%;
   left: 0;
   margin-top: -$arrowWidth;

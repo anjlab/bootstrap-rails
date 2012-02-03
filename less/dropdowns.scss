@@ -26,7 +26,7 @@
   border-left:  4px solid transparent;
   border-right: 4px solid transparent;
   border-top:   4px solid $black;
-  @include .opacity(30);
+  @include opacity(30);
   content: "\2193";
 }
 .dropdown .caret {

@@ -14,10 +14,10 @@
   &.right  { margin-left:  2px; }
   &.bottom { margin-top:   2px; }
   &.left   { margin-left: -2px; }
-  &.top .tooltip-arrow    { @include popover-arrow-top(); }
-  &.left .tooltip-arrow   { @include popover-arrow-left(); }
-  &.bottom .tooltip-arrow { @include popover-arrow-bottom }
-  &.right .tooltip-arrow  { @include popover-arrow-right }
+  &.top .tooltip-arrow    { @include popover-arrow-top; }
+  &.left .tooltip-arrow   { @include popover-arrow-left; }
+  &.bottom .tooltip-arrow { @include popover-arrow-bottom; }
+  &.right .tooltip-arrow  { @include popover-arrow-right; }
 }
 .tooltip-inner {
   max-width: 200px;

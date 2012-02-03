@@ -232,7 +232,7 @@
 // Menu position and menu carets
 .navbar .dropdown-menu {
   margin-top: 1px;
-  @include .border-radius(4px);
+  @include border-radius(4px);
   &:before {
     content: '';
     display: inline-block;

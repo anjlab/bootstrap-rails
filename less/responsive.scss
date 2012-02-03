@@ -8,7 +8,7 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
-// Responsive.less
+// Responsive.scss
 // For phone and tablet devices
 // -------------------------------------------------------------
 
@@ -17,8 +17,8 @@
 // -------------------------
 // Required since we compile the responsive stuff separately
 
-@import "variables.less"; // Modify this for custom colors, font-sizes, etc
-@import "mixins.less";
+@import "variables.scss"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.scss";
 
 
 // RESPONSIVE CLASSES
@@ -46,7 +46,7 @@
   // Block level the page header small tag for readability
   .page-header h1 small {
     display: block;
-    line-height: @baseLineHeight;
+    line-height: $baseLineHeight;
   }
 
   // Make span* classes full width
@@ -157,13 +157,13 @@
 @media (min-width: 768px) and (max-width: 980px) {
 
   // Fixed grid
-  #gridSystem > .generate(12, 42px, 20px);
+  @include grid-system-generate(12, 42px, 20px);
 
   // Fluid grid
-  #fluidGridSystem > .generate(12, 5.801104972%, 2.762430939%);
+  @include fluid-grid-system-generate(12, 5.801104972%, 2.762430939%);
 
   // Input grid
-  #inputGridSystem > .generate(12, 42px, 20px);
+  @include input-grid-system-generate(12, 42px, 20px);
 
 }
 
@@ -182,7 +182,7 @@
   // Unfix the navbar
   .navbar-fixed-top {
     position: static;
-    margin-bottom: @baseLineHeight;
+    margin-bottom: $baseLineHeight;
   }
   .navbar-fixed-top .navbar-inner {
     padding: 5px;
@@ -204,7 +204,7 @@
   // Block-level the nav
   .navbar .nav {
     float: none;
-    margin: 0 0 (@baseLineHeight / 2);
+    margin: 0 0 ($baseLineHeight / 2);
   }
   .navbar .nav > li {
     float: none;
@@ -220,15 +220,15 @@
   .navbar .dropdown-menu a {
     padding: 6px 15px;
     font-weight: bold;
-    color: @navbarLinkColor;
-    .border-radius(3px);
+    color: $navbarLinkColor;
+    @include border-radius(3px);
   }
   .navbar .dropdown-menu li + li a {
     margin-bottom: 2px;
   }
   .navbar .nav > li > a:hover,
   .navbar .dropdown-menu a:hover {
-    background-color: @navbarBackground;
+    background-color: $navbarBackground;
   }
   // Dropdowns in the navbar
   .navbar .dropdown-menu {
@@ -242,8 +242,8 @@
     padding: 0;
     background-color: transparent;
     border: none;
-    .border-radius(0);
-    .box-shadow(none);
+    @include border-radius(0);
+    @include box-shadow(none);
   }
   .navbar .dropdown-menu:before,
   .navbar .dropdown-menu:after {
@@ -256,12 +256,12 @@
   .navbar-form,
   .navbar-search {
     float: none;
-    padding: (@baseLineHeight / 2) 15px;
-    margin: (@baseLineHeight / 2) 0;
-    border-top: 1px solid @navbarBackground;
-    border-bottom: 1px solid @navbarBackground;
-    @shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
-    .box-shadow(@shadow);
+    padding: ($baseLineHeight / 2) 15px;
+    margin: ($baseLineHeight / 2) 0;
+    border-top: 1px solid $navbarBackground;
+    border-bottom: 1px solid $navbarBackground;
+    $shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+    @include box-shadow($shadow);
   }
   // Pull right (secondary) nav content
   .navbar .nav.pull-right {
@@ -304,13 +304,13 @@
 @media (min-width: 1200px) {
 
   // Fixed grid
-  #gridSystem > .generate(12, 70px, 30px);
+  @include grid-system-generate(12, 70px, 30px);
 
   // Fluid grid
-  #fluidGridSystem > .generate(12, 5.982905983%, 2.564102564%);
+  @include fluid-grid-system-generate(12, 5.982905983%, 2.564102564%);
 
   // Input grid
-  #inputGridSystem > .generate(12, 70px, 30px);
+  @include input-grid-system-generate(12, 70px, 30px);
 
   // Thumbnails
   .thumbnails {
