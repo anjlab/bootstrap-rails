@@ -18,12 +18,12 @@ table {
 
 .table {
   width: 100%;
-  margin-bottom: @baseLineHeight;
+  margin-bottom: $baseLineHeight;
   // Cells
   th,
   td {
     padding: 8px;
-    line-height: @baseLineHeight;
+    line-height: $baseLineHeight;
     text-align: left;
     border-top: 1px solid #ddd;
   }
@@ -65,7 +65,7 @@ table {
   border: 1px solid #ddd;
   border-collapse: separate; // Done so we can round those corners!
   *border-collapse: collapsed; // IE7 can't round corners anyway
-  .border-radius(4px);
+  @include border-radius(4px);
   th + th,
   td + td,
   th + td,
@@ -81,20 +81,20 @@ table {
   // For first th or td in the first row in the first thead or tbody
   thead:first-child tr:first-child th:first-child,
   tbody:first-child tr:first-child td:first-child {
-    .border-radius(4px 0 0 0);
+    @include border-radius(4px 0 0 0);
   }
   thead:first-child tr:first-child th:last-child,
   tbody:first-child tr:first-child td:last-child {
-    .border-radius(0 4px 0 0);
+    @include border-radius(0 4px 0 0);
   }
   // For first th or td in the first row in the first thead or tbody
   thead:last-child tr:last-child th:first-child,
   tbody:last-child tr:last-child td:first-child {
-    .border-radius(0 0 0 4px);
+    @include border-radius(0 0 0 4px);
   }
   thead:last-child tr:last-child th:last-child,
   tbody:last-child tr:last-child td:last-child {
-    .border-radius(0 0 4px 0);
+    @include border-radius(0 0 4px 0);
   }
 }
 
@@ -118,22 +118,13 @@ table {
 // -----------------
 
 // Change the columns
-.tableColumns(@columnSpan: 1) {
+@mixin table-columns($columnSpan: 1) {
   float: none;
-  width: ((@gridColumnWidth) * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1)) - 16;
+  width: (($gridColumnWidth) * $columnSpan) + ($gridGutterWidth * ($columnSpan - 1)) - 16;
   margin-left: 0;
 }
 table {
-  .span1     { .tableColumns(1); }
-  .span2     { .tableColumns(2); }
-  .span3     { .tableColumns(3); }
-  .span4     { .tableColumns(4); }
-  .span5     { .tableColumns(5); }
-  .span6     { .tableColumns(6); }
-  .span7     { .tableColumns(7); }
-  .span8     { .tableColumns(8); }
-  .span9     { .tableColumns(9); }
-  .span10    { .tableColumns(10); }
-  .span11    { .tableColumns(11); }
-  .span12    { .tableColumns(12); }
+  @for $i from 1 through 12 {
+    .span#{$i} { @include table-columns($i); }
+  }
 }

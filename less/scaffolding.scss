@@ -8,11 +8,11 @@
 
 body {
   margin: 0;
-  font-family: @baseFontFamily;
-  font-size: @baseFontSize;
-  line-height: @baseLineHeight;
-  color: @textColor;
-  background-color: @white;
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  color: $textColor;
+  background-color: $white;
 }
 
 
@@ -20,10 +20,10 @@ body {
 // -----
 
 a {
-  color: @linkColor;
+  color: $linkColor;
   text-decoration: none;
 }
 a:hover {
-  color: @linkColorHover;
+  color: $linkColorHover;
   text-decoration: underline;
 }

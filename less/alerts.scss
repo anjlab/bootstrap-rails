@@ -4,15 +4,15 @@
 // Base alert styles
 .alert {
   padding: 8px 35px 8px 14px;
-  margin-bottom: @baseLineHeight;
+  margin-bottom: $baseLineHeight;
   text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  background-color: @warningBackground;
-  border: 1px solid @warningBorder;
-  .border-radius(4px);
+  background-color: $warningBackground;
+  border: 1px solid $warningBorder;
+  @include border-radius(4px);
 }
 .alert,
 .alert-heading {
-  color: @warningText;
+  color: $warningText;
 }
 
 // Adjust close link position
@@ -27,31 +27,31 @@
 // ----------------
 
 .alert-success {
-  background-color: @successBackground;
-  border-color: @successBorder;  
+  background-color: $successBackground;
+  border-color: $successBorder;  
 }
 .alert-success,
 .alert-success .alert-heading {
-  color: @successText;
+  color: $successText;
 }
 .alert-danger,
 .alert-error {
-  background-color: @errorBackground;
-  border-color: @errorBorder;
+  background-color: $errorBackground;
+  border-color: $errorBorder;
 }
 .alert-danger,
 .alert-error,
 .alert-danger .alert-heading,
 .alert-error .alert-heading {
-  color: @errorText;
+  color: $errorText;
 }
 .alert-info {
-  background-color: @infoBackground;
-  border-color: @infoBorder;
+  background-color: $infoBackground;
+  border-color: $infoBorder;
 }
 .alert-info,
 .alert-info .alert-heading {
-  color: @infoText;
+  color: $infoText;
 }
 
 

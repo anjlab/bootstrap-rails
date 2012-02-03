@@ -3,10 +3,10 @@
 
 .pager {
   margin-left: 0;
-  margin-bottom: @baseLineHeight;
+  margin-bottom: $baseLineHeight;
   list-style: none;
   text-align: center;
-  .clearfix();
+  @include clearfix();
 }
 .pager li {
   display: inline;
@@ -16,7 +16,7 @@
   padding: 5px 14px;
   background-color: #fff;
   border: 1px solid #ddd;
-  .border-radius(15px);
+  @include border-radius(15px);
 }
 .pager a:hover {
   text-decoration: none;
