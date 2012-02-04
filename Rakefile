@@ -3,15 +3,16 @@ require "bundler/gem_tasks"
 
 desc "Update Twitter's Bootstrap"
 task "update-twitter" do
-  boostrap_version = Bootstrap::Rails::VERSION.split("\.")[0..2].join(".")
+
+  Dir["vendor/twitter/img/*.*"].each do |file|
+    cp file, "vendor/assets/images/", :verbose => true
+  end
+
   Dir["vendor/assets/stylesheets/*.*"].each {|f| FileUtils.rm(f)}
-  Dir["vendor/twitter/lib/*.scss"].each do |file|
+  Dir["vendor/twitter/scss/*.scss"].each do |file|
     cp file, "vendor/assets/stylesheets/", :verbose => true
   end
   bootstrap_scss = File.read("vendor/assets/stylesheets/bootstrap.scss")
-
-  bootstrap_scss.gsub!(/@VERSION/, "v#{boostrap_version}")
-  bootstrap_scss.gsub!(/^.*@DATE.*/, " *")
 
   File.open("vendor/assets/stylesheets/bootstrap.scss", "w") do |f|
     f.write(bootstrap_scss)
@@ -33,7 +34,6 @@ task "update-twitter" do
   js_list = js_priorities.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
   
   File.open("vendor/assets/javascripts/bootstrap.js", "w") do |f|
-    f.write "// Bootstrap v#{boostrap_version}\n"
     js_list.each do |js|
       f.write "//= require #{js}\n"
     end
