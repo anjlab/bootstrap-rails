@@ -1,4 +1,4 @@
-# Twitter Bootstrap for Rails 3
+# Twitter Bootstrap v2 for Rails 3
 Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.
 It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
 
@@ -6,7 +6,7 @@ It includes base CSS and HTML for typography, forms, buttons, tables, grids, nav
 
 anjlab-bootstrap-rails project integrates Bootstrap CSS (with SASS flavour) and JS toolkits for Rails 3 projects
 
-## Rails 3.1
+## Rails > 3.1
 Include Bootstrap in Gemfile;
 
 ``` ruby
@@ -32,26 +32,65 @@ Add necessary stylesheet file to app/assets/stylesheets/application.css
 
 You can override boostrapr variables:
 
-``` csss
+```scss
 // Create app/assets/stylesheets/bootstrap.scss
-// CSS Reset
-@import "reset.scss";
-
 // Core variables and mixins
 @import "variables.scss"; // Modify this for custom colors, font-sizes, etc
 
+
+// Override variabels here
 $linkColor: red; // Make all links red
 
 @import "mixins.scss";
 
+// CSS Reset
+@import "reset.scss";
+
 // Grid system and page structure
 @import "scaffolding.scss";
+@import "grid.scss";
+@import "layouts.scss";
 
-// Styled patterns and elements
+// Base CSS
 @import "type.scss";
+@import "code.scss";
 @import "forms.scss";
 @import "tables.scss";
-@import "patterns.scss";
+
+// Components: common
+@import "sprites.scss";
+@import "dropdowns.scss";
+@import "wells.scss";
+@import "component-animations.scss";
+@import "close.scss";
+
+// Components: Buttons & Alerts
+@import "buttons.scss";
+@import "button-groups.scss";
+@import "alerts.scss"; // Note: alerts share common CSS with buttons and thus have styles in buttons.scss
+
+// Components: Nav
+@import "navs.scss";
+@import "navbar.scss";
+@import "breadcrumbs.scss";
+@import "pagination.scss";
+@import "pager.scss";
+
+// Components: Popovers
+@import "modals.scss";
+@import "tooltip.scss";
+@import "popovers.scss";
+
+// Components: Misc
+@import "thumbnails.scss";
+@import "labels.scss";
+@import "progress-bars.scss";
+@import "accordion.scss";
+@import "carousel.scss";
+@import "hero-unit.scss";
+
+// Utility classes
+@import "utilities.scss"; // Has to be last to override when necessary
 ```
 
 ## Javascripts
@@ -63,14 +102,18 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 //= require bootstrap
 
 // Or peek any of them yourself
-//= require bootstrap-alerts
-//= require bootstrap-buttons
-//= require bootstrap-dropdown
+//= require bootstrap-transition
+//= require bootstrap-alert
 //= require bootstrap-modal
-//= require bootstrap-twipsy
-//= require bootstrap-popover
+//= require bootstrap-dropdown
 //= require bootstrap-scrollspy
-//= require bootstrap-tabs
+//= require bootstrap-tab
+//= require bootstrap-tooltip
+//= require bootstrap-popover
+//= require bootstrap-button
+//= require bootstrap-collapse
+//= require bootstrap-carousel
+//= require bootstrap-typeahead
 ```
         
 ## Thanks
