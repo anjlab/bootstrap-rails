@@ -12,11 +12,6 @@ task "update-twitter" do
   Dir["vendor/twitter/scss/*.scss"].each do |file|
     cp file, "vendor/assets/stylesheets/", :verbose => true
   end
-  bootstrap_scss = File.read("vendor/assets/stylesheets/bootstrap.scss")
-
-  File.open("vendor/assets/stylesheets/bootstrap.scss", "w") do |f|
-    f.write(bootstrap_scss)
-  end
 
   Dir["vendor/assets/javascripts/*.*"].each {|f| FileUtils.rm(f)}
   js_files = Dir["vendor/twitter/js/*.js"].map()
@@ -29,9 +24,8 @@ task "update-twitter" do
 
   # dependencies
   js_priorities["bootstrap-transition.js"]  = 0
-  js_priorities["bootstrap-twipsy.js"]      = 2
-  js_priorities["bootstrap-tooltip.js"]     = 3
-  js_priorities["bootstrap-popover.js"]     = 4
+  js_priorities["bootstrap-tooltip.js"]     = 2
+  js_priorities["bootstrap-popover.js"]     = 3
   
   js_list = js_priorities.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
   
