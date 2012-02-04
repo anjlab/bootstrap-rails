@@ -25,11 +25,13 @@ task "update-twitter" do
   end
 
   js_priorities = {}
-  js_files.each {|f| js_priorities[File.basename(f)] = 0}
+  js_files.each {|f| js_priorities[File.basename(f)] = 1}
 
-  # popover depend on twipsy
-  js_priorities["bootstrap-twipsy.js"]  = 1
-  js_priorities["bootstrap-popover.js"] = 2
+  # dependencies
+  js_priorities["bootstrap-transition.js"]  = 0
+  js_priorities["bootstrap-twipsy.js"]      = 2
+  js_priorities["bootstrap-tooltip.js"]     = 3
+  js_priorities["bootstrap-popover.js"]     = 4
   
   js_list = js_priorities.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
   
