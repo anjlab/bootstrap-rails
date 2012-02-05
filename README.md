@@ -120,12 +120,18 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 
  - [Twitter Bootstrap Upgrade](http://twitter.github.com/bootstrap/upgrading.html)
  - rm -rf tmp/cache
+
+## For Developers
+
+ - Fork this repo if you want fix rails integration bug
+ - Fork [SASS repo](https://github.com/yury/bootstrap) if you want fix SASS bug
         
 ## Thanks
 Thanks Twitter for Bootstrap
 http://twitter.github.com/bootstrap
 
 Inspired by Seyhun Akyürek and his [twitter-bootstrap-rails gem](https://github.com/seyhunak/twitter-bootstrap-rails)
+
 
 ## License
 Copyright (c) 2011 AnjLab
