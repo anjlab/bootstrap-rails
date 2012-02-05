@@ -115,6 +115,11 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 //= require bootstrap-carousel
 //= require bootstrap-typeahead
 ```
+
+## Upgrade notes from 1.4
+
+ - [Twitter Bootstrap Upgrade](http://twitter.github.com/bootstrap/upgrading.html)
+ - rm -rf tmp/cache
         
 ## Thanks
 Thanks Twitter for Bootstrap
