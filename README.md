@@ -28,6 +28,7 @@ Add necessary stylesheet file to app/assets/stylesheets/application.css
 
 ``` css
 *= require bootstrap
+*= require responsive
 ```
 
 You can override bootstrap variables:
@@ -45,6 +46,7 @@ $gridGutterWidth: 10px;
 
 // import original bootstrap
 @import "bootstrap";
+@import "responsive";
 ```
 
 ## Javascripts
