@@ -25,7 +25,7 @@
 // ------------------
 @mixin tab-focus() {
   // Default
-  outline: thin dotted;
+  outline: thin dotted #333;
   // Webkit
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -87,6 +87,15 @@
   ::-webkit-input-placeholder {
     color: $color;
   }
+}
+
+// Text overflow
+// -------------------------
+// Requires inline-block or block for proper styling
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 
@@ -214,8 +223,6 @@
   }
 }
 
-
-
 // Input grid system
 // -------------------------
 @mixin input-grid-system-input-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $columns) {
@@ -228,6 +235,52 @@
     @for $i from 1 through 12 {
       &.span#{$i} { @include input-grid-system-input-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $i); }
     }
+  }
+}
+
+// Make a Grid
+// -------------------------
+// Use .make-row and .make-column to assign semantic layouts grid system behavior
+@mixin make-row() {
+  margin-left: $gridGutterWidth * -1;
+  @include clearfix();
+}
+@mixin make-column($columns: 1) {
+  float: left;
+  margin-left: $gridGutterWidth;
+  width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
+}
+
+
+
+// Form field states (used in forms.less)
+// --------------------------------------------------
+
+// Mixin for form field states
+@mixin form-field-state($textColor: #555, $borderColor: #ccc, $backgroundColor: #f5f5f5) {
+  // Set the text color
+  > label,
+  .help-block,
+  .help-inline {
+    color: $textColor;
+  }
+  // Style inputs accordingly
+  input,
+  select,
+  textarea {
+    color: $textColor;
+    border-color: $borderColor;
+    &:focus {
+      border-color: darken($borderColor, 10%);
+      @include box-shadow(0 0 6px lighten($borderColor, 20%));
+    }
+  }
+  // Give a small background color for input-prepend/-append
+  .input-prepend .add-on,
+  .input-append .add-on {
+    color: $textColor;
+    background-color: $backgroundColor;
+    border-color: $textColor;
   }
 }
 
@@ -287,6 +340,13 @@
       -ms-transform: skew($x, $y);
        -o-transform: skew($x, $y);
           transform: skew($x, $y);
+}
+@mixin translate3d($x: 0, $y: 0, $z: 0) {
+  -webkit-transform: translate($x, $y, $z);
+     -moz-transform: translate($x, $y, $z);
+      -ms-transform: translate($x, $y, $z);
+       -o-transform: translate($x, $y, $z);
+          transform: translate($x, $y, $z);
 }
 
 // Background clipping
