@@ -49,6 +49,8 @@ $gridGutterWidth: 10px;
 @import "responsive";
 ```
 
+ 3. restart `pow` if you are using it.
+
 ## Javascripts
 
 Add necessary javascript(s) files to app/assets/javascripts/application.js
