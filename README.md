@@ -48,6 +48,7 @@ $gridGutterWidth: 10px;
 @import "bootstrap";
 @import "responsive";
 ```
+ NOTE: restart `pow` if you are using it.
 
 ## Javascripts
 
