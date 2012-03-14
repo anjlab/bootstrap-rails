@@ -60,7 +60,7 @@
 
 // Brand, links, text, and buttons
 .navbar {
-  color: @navbarText;
+  color: $navbarText;
   // Hover and active states
   .brand:hover {
     text-decoration: none;
@@ -125,7 +125,7 @@
 .navbar-search {
   position: relative;
   float: left;
-  .navbarVerticalAlign(28px); // Vertically center in navbar
+  @include navbar-vertical-align(28px); // Vertically center in navbar
   margin-bottom: 0;
   .search-query {
     padding: 4px 9px;
@@ -270,7 +270,7 @@
     border-left:   7px solid transparent;
     border-right:  7px solid transparent;
     border-bottom: 7px solid #ccc;
-    border-bottom-color: @dropdownBorder;
+    border-bottom-color: $dropdownBorder;
     position: absolute;
     top: -7px;
     left: 9px;
@@ -290,13 +290,13 @@
 .navbar-fixed-bottom .dropdown-menu {
   &:before {
     border-top: 7px solid #ccc;
-    border-top-color: @dropdownBorder;
+    border-top-color: $dropdownBorder;
     border-bottom: 0;
     bottom: -7px;
     top: auto;
   }
   &:after {
-    border-top: 6px solid @dropdownBackground;
+    border-top: 6px solid $dropdownBackground;
     border-bottom: 0;
     bottom: -6px;
     top: auto;
