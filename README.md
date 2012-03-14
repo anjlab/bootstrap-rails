@@ -1,4 +1,4 @@
-# Twitter Bootstrap v 2.0.1 for Rails 3
+# Twitter Bootstrap v 2.0.2 for Rails 3
 Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.
 It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
 
