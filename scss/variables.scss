@@ -70,7 +70,7 @@ $btnBackgroundHighlight:            darken($white, 10%) !default;
 $btnBorder:                         darken($white, 20%) !default;
 
 $btnPrimaryBackground:              $linkColor !default;
-$btnPrimaryBackgroundHighlight:     spin($btnPrimaryBackground, 15%) !default;
+$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 15%) !default;
 
 $btnInfoBackground:                 #5bc0de !default;
 $btnInfoBackgroundHighlight:        #2f96b4 !default;
