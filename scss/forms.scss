@@ -546,7 +546,7 @@ legend + .control-group {
   }
   // Remove bottom margin on block level help text since that's accounted for on .control-group
   .help-block {
-    margin-top: @baseLineHeight / 2;
+    margin-top: $baseLineHeight / 2;
     margin-bottom: 0;
   }
   // Move over buttons in .form-actions to align with .controls

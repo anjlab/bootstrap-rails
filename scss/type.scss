@@ -127,7 +127,7 @@ dd {
 }
 dt {
   font-weight: bold;
-  line-height: @baseLineHeight - 1; // fix jank Helvetica Neue font bug
+  line-height: $baseLineHeight - 1; // fix jank Helvetica Neue font bug
 }
 dd {
   margin-left: $baseLineHeight / 2;
