@@ -158,7 +158,7 @@
 
 
 // Block level inputs
-.input-block-level {
+@mixin input-block-level {
   display: block;
   width: 100%;
   min-height: 28px; /* Make inputs at least the height of their button counterpart */
@@ -560,7 +560,7 @@
 }
 @mixin grid-fluid-span-x($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
   @for $i from 1 through $columns {
-    .span#{$i} { @include grid-fluid-span($i, $fluidGridColumnWidth, $fluidGridGutterWidth) }
+    > .span#{$i} { @include grid-fluid-span($i, $fluidGridColumnWidth, $fluidGridGutterWidth) }
   } 
 }
 @mixin grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth) {
@@ -576,7 +576,7 @@
     }
 
     // generate .spanX
-    @include grid-fluid-span-x($gridColumns);
+    @include grid-fluid-span-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
   }
 }
 @mixin grid-input-span($columns, $gridColumnWidth, $gridGutterWidth) {
@@ -595,5 +595,5 @@
   }
 
   // generate .spanX
-  @include grid-input-span-x($gridColumns);
+  @include grid-input-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth);
 }
