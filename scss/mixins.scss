@@ -148,6 +148,15 @@
 // FORMS
 // --------------------------------------------------
 
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+      -ms-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+
 // Block level inputs
 .input-block-level {
   display: block;
@@ -264,15 +273,6 @@
      -moz-background-size: $size;
        -o-background-size: $size;
           background-size: $size;
-}
-
-
-// Box sizing
-@mixin box-sizing($boxmodel) {
-  -webkit-box-sizing: $boxmodel;
-     -moz-box-sizing: $boxmodel;
-      -ms-box-sizing: $boxmodel;
-          box-sizing: $boxmodel;
 }
 
 // User select
