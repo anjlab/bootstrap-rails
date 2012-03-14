@@ -182,7 +182,7 @@
   select[class*="span"],
   textarea[class*="span"],
   .uneditable-input {
-    .input-block-level();
+    @include input-block-level();
   }
   // But don't let it screw up prepend/append inputs
   .input-prepend input[class*="span"],
@@ -203,10 +203,10 @@
   @include grid-core(42px, 20px);
 
   // Fluid grid
-  @include fluid(5.801104972%, 2.762430939%);
+  @include grid-fluid(5.801104972%, 2.762430939%);
 
   // Input grid
-  @include input(42px, 20px);
+  @include grid-input(42px, 20px);
 
 }
 
