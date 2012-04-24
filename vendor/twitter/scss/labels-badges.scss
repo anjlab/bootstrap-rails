@@ -1,0 +1,54 @@
+// LABELS & BADGES
+// ---------------
+
+// Base classes
+.label,
+.badge {
+  font-size: $baseFontSize * .846;
+  font-weight: bold;
+  line-height: 14px; // ensure proper line-height if floated
+  color: $white;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: $grayLight;
+}
+// Set unique padding and border-radii
+.label {
+  padding: 1px 4px 2px;
+  @include border-radius(3px);
+}
+.badge {
+  padding: 1px 9px 2px;
+  @include border-radius(9px);
+}
+
+// Hover state, but only for links
+a {
+  &.label:hover,
+  &.badge:hover {
+    color: $white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+// Colors
+// Only give background-color difference to links (and to simplify, we don't qualifty with `a` but [href] attribute)
+@each $widget in label, badge {
+  // Important (red)
+  .#{$widget}-important         { background-color: $errorText; }
+  .#{$widget}-important[href]   { background-color: darken($errorText, 10%); }
+  // Warnings (orange)
+  .#{$widget}-warning           { background-color: $orange; }
+  .#{$widget}-warning[href]     { background-color: darken($orange, 10%); }
+  // Success (green)
+  .#{$widget}-success           { background-color: $successText; }
+  .#{$widget}-success[href]     { background-color: darken($successText, 10%); }
+  // Info (turquoise)
+  .#{$widget}-info              { background-color: $infoText; }
+  .#{$widget}-info[href]        { background-color: darken($infoText, 10%); }
+  // Inverse (black)
+  .#{$widget}-inverse           { background-color: $grayDark; }
+  .#{$widget}-inverse[href]     { background-color: darken($grayDark, 10%); }
+}
