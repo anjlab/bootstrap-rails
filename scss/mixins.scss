@@ -572,7 +572,6 @@
       @include input-block-level();
       float: left;
       margin-left: $fluidGridGutterWidth;
-      *margin-left: $fluidGridGutterWidth - percentage(.5 / $gridRowWidth * 100);
       //TODO: fix *margin-left: $fluidGridGutterWidth - (.5 / $gridRowWidth * 100 * 1%);
     }
     [class*="span"]:first-child {
