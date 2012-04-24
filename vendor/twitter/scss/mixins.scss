@@ -564,7 +564,7 @@
 
 @mixin grid-fluid-span($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
   width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
-  //TODO: fix *width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100 * 1%);
+  *width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / ($gridRowWidth / 1px)* 100 * 1%);
 }
 @mixin grid-fluid-span-x($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
   @for $i from 1 through $columns {
@@ -579,7 +579,7 @@
       @include input-block-level();
       float: left;
       margin-left: $fluidGridGutterWidth;
-      //TODO: fix *margin-left: $fluidGridGutterWidth - (.5 / $gridRowWidth * 100 * 1%);
+      *margin-left: $fluidGridGutterWidth - (.5 / ($gridRowWidth / 1px) * 100 * 1%);
     }
     [class*="span"]:first-child {
       margin-left: 0;
