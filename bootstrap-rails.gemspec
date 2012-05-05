@@ -4,8 +4,8 @@ require File.expand_path('../lib/bootstrap-rails/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Yury Korolev"]
   gem.email         = ["yury.korolev@gmail.com"]
-  gem.description   = %q{Twitter Bootstrap CSS (with SASS flavour) and JS toolkits for Rails 3 projects}
-  gem.summary       = %q{Bootstrap CSS (with SASS flavour) and JS toolkits for Rails 3 projects}
+  gem.description   = %q{Twitter Bootstrap CSS (with Sass flavour) and JS toolkits for Rails 3 projects}
+  gem.summary       = %q{Bootstrap CSS (with Sass flavour) and JS toolkits for Rails 3 projects}
   gem.homepage      = "https://github.com/anjlab/bootstrap-rails"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }

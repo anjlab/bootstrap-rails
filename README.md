@@ -4,7 +4,7 @@ It includes base CSS and HTML for typography, forms, buttons, tables, grids, nav
 
 
 
-anjlab-bootstrap-rails project integrates Bootstrap CSS (with SASS flavour) and JS toolkits for Rails 3 projects
+anjlab-bootstrap-rails project integrates Bootstrap CSS (with Sass flavour) and JS toolkits for Rails 3 projects
 
 ## Rails > 3.1
 Include Bootstrap in Gemfile;
@@ -81,7 +81,7 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 ## For Developers
 
  - Fork this repo if you want fix rails integration bug
- - Fork [SASS repo](https://github.com/yury/bootstrap) if you want fix SASS bug
+ - Fork [Sass repo](https://github.com/yury/bootstrap) if you want fix SASS bug
         
 ## Thanks
 Thanks Twitter for Bootstrap
