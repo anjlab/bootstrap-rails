@@ -36,7 +36,7 @@ For more information on SemVer, please visit http://semver.org/.
 Bug tracker
 -----------
 
-Have a bug? Please create an issue here on GitHub!
+Have a bug? Please create an issue here on GitHub! Also, when filing please make sure you're familiar with [necolas's guidelines](https://github.com/necolas/issue-guidelines). thanks! <3
 
 https://github.com/twitter/bootstrap/issues
 
@@ -97,6 +97,11 @@ Runs jshint and qunit tests headlessly in phantom js (used for ci). Depends on h
 + **watch** - `make watch`
 This is a convenience method for watching just Less files and automatically building them whenever you save. Requires the Watchr gem.
 
+
+Contributing
+------------
+
+Please make all pull requests against wip-* branches. Also, if your unit test contains javascript patches or features - you must include relevant unit tests. Thanks!
 
 
 Authors
