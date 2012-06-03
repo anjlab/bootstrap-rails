@@ -80,20 +80,31 @@
 
 // Placeholder text
 // -------------------------
+@mixin placeholder-input($color: $placeholderText) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
 @mixin placeholder($color: $placeholderText) {
-  // actually &:-moz-placeholder should be here
   :-moz-placeholder {
     color: $color;
   }
-  // actually &:-ms-input-placeholder should be here
   :-ms-input-placeholder {
     color: $color;
   }
-  // actually &::-webkit-input-placeholder should be here
   ::-webkit-input-placeholder {
     color: $color;
   }
 }
+
+
 
 // Text overflow
 // -------------------------
