@@ -118,8 +118,7 @@ input[type="color"],
   border: 1px solid $inputBorder;
   @include border-radius($inputBorderRadius);
   @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  $transition: border linear .2s, box-shadow linear .2s;
-  @include transition($transition);
+  @include transition((border linear .2s, box-shadow linear .2s));
 
   // Focus state
   &:focus {
