@@ -45,7 +45,7 @@ namespace :twitter do
     js["popover.js"]     = 3
     
     list = js.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
-    File.write "vendor/assets/javascripts/twitter/bootstrap.js", list.map {|f| "//= require #{f}"}.join("\n")
+    File.write "vendor/assets/javascripts/twitter/bootstrap.js", list.map {|f| "//= require twitter/bootstrap/#{f}"}.join("\n")
   end
 
   desc "Update Twitter's Bootstrap SCSS"
