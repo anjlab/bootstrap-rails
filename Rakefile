@@ -10,40 +10,53 @@ namespace :twitter do
     end
   end
 
-  desc "Update Twitter's Bootstrap Assets"
-  task :update => :pull do
 
-    Dir["vendor/twitter/img/*.*"].each do |file|
-      cp file, "vendor/assets/images/", :verbose => true
+  TW_IMGS = FileList["vendor/twitter/img/*.*"]
+  ASSETS_IMGS = TW_IMGS.pathmap("vendor/assets/images/twitter/%f")
+  ASSETS_IMGS.zip(TW_IMGS).each do |target, source|
+    file target => [source] { cp source, target, verbose: true }
+  end
+
+  TW_JS     = FileList["vendor/twitter/js/*.*"]
+  ASSETS_JS = TW_JS.pathmap("vendor/assets/javascripts/twitter/bootstrap/%{bootstrap-,}f")
+  ASSETS_JS.zip(TW_JS).each do |target, source|
+    file target => [source] { cp source, target, verbose: true }
+  end
+
+  TW_SCSS = FileList["vendor/twitter/scss/*.*"]
+  ASSETS_SCSS = TW_SCSS.pathmap("vendor/frameworks/twitter/bootstrap/%f")
+  ASSETS_SCSS.zip(TW_SCSS).each do |target, source|
+    file target => [source] { cp source, target, verbose: true }
+  end
+
+  desc "Update Twitter's Bootstrap Images"
+  task :imgs => ASSETS_IMGS
+
+  desc "Update Twitter's Bootstrap JS"
+  task :js => ASSETS_JS do
+    js = {}
+    ASSETS_JS.pathmap("%f").each do |f|
+      js[f] = 1
     end
-
-    Dir["vendor/assets/stylesheets/*.*"].each {|f| FileUtils.rm(f)}
-    Dir["vendor/twitter/scss/*.scss"].each do |file|
-      cp file, "vendor/assets/stylesheets/", :verbose => true
-    end
-
-    Dir["vendor/assets/javascripts/*.*"].each {|f| FileUtils.rm(f)}
-    js_files = Dir["vendor/twitter/js/*.js"].map()
-    js_files.each do |file|
-      cp file, "vendor/assets/javascripts/", :verbose => true
-    end
-
-    js_priorities = {}
-    js_files.each {|f| js_priorities[File.basename(f)] = 1}
 
     # dependencies
-    js_priorities["bootstrap-transition.js"]  = 0
-    js_priorities["bootstrap-tooltip.js"]     = 2
-    js_priorities["bootstrap-popover.js"]     = 3
+    js["transition.js"]  = 0
+    js["tooltip.js"]     = 2
+    js["popover.js"]     = 3
     
-    js_list = js_priorities.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
-    
-    File.open("vendor/assets/javascripts/bootstrap.js", "w") do |f|
-      js_list.each do |js|
-        f.write "//= require #{js}\n"
-      end
-    end
+    list = js.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
+    File.write "vendor/assets/javascripts/twitter/bootstrap.js", list.map {|f| "//= require #{f}"}.join("\n")
   end
+
+  desc "Update Twitter's Bootstrap SCSS"
+  task :scss => ASSETS_SCSS do
+    File.write "vendor/frameworks/twitter/bootstrap.scss", '@import "bootstrap/bootstrap.scss";'
+    File.write "vendor/assets/stylesheets/twitter/bootstrap.scss", '@import "twitter/bootstrap/bootstrap.scss";'
+    File.write "vendor/assets/stylesheets/twitter/bootstrap-responsive.scss", '@import "twitter/bootstrap/responsive.scss";'
+  end
+
+  desc "Update Twitter's Bootstrap Assets"
+  task :assets => [:pull, :imgs, :scss, :js]
   
 end
 
