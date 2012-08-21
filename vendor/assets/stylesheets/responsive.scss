@@ -1,5 +1,5 @@
 /*!
- * Bootstrap Responsive v2.0.4
+ * Bootstrap Responsive v2.1.0
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -31,14 +31,14 @@
 // MEDIA QUERIES
 // ------------------
 
-// Phones to portrait tablets and narrow desktops
-@import "responsive-767px-max.scss";
+// Large desktops
+@import "responsive-1200px-min.scss";
 
 // Tablets to regular desktops
 @import "responsive-768px-979px.scss";
 
-// Large desktops
-@import "responsive-1200px-min.scss";
+// Phones to portrait tablets and narrow desktops
+@import "responsive-767px-max.scss";
 
 
 // RESPONSIVE NAVBAR
