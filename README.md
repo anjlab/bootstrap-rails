@@ -1,4 +1,4 @@
-# Twitter Bootstrap v2.0.4 for Rails 3
+# Twitter Bootstrap v2.1.0 for Rails 3
 Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.
 It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
 
@@ -10,7 +10,7 @@ anjlab-bootstrap-rails project integrates Bootstrap CSS (with Sass flavour) and 
 Include Bootstrap in Gemfile;
 
 ``` ruby
-gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
+gem 'anjlab-bootstrap-rails', '>= 2.1', :require => 'bootstrap-rails'
 ```
 
 or you can install from latest build;
@@ -27,13 +27,13 @@ and run bundle install.
 Add necessary stylesheet file to app/assets/stylesheets/application.css
 
 ``` css
-*= require bootstrap
-*= require responsive
+*= require twitter/bootstrap
+*= require twitter/bootstrap-responsive
 ```
 
 You can override bootstrap variables:
 
- 1. replace `*= require bootstrap` with `*= require app_bootstrap`
+ 1. replace `*= require twitter/bootstrap` with `*= require app_bootstrap`
  2. create `app_bootstrap.css.scss` :
 
 ```scss
@@ -45,8 +45,8 @@ $gridColumnWidth: 70px;
 $gridGutterWidth: 10px;
 
 // import original bootstrap
-@import "bootstrap";
-@import "responsive";
+@import "twitter/bootstrap";
+@import "twitter/bootstrap-responsive";
 ```
  NOTE: restart `pow` if you are using it.
 
@@ -56,21 +56,22 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 
 ``` javascript
 // Include all twitter's javascripts
-//= require bootstrap
+//= require twitter/bootstrap
 
 // Or peek any of them yourself
-//= require bootstrap-transition
-//= require bootstrap-alert
-//= require bootstrap-modal
-//= require bootstrap-dropdown
-//= require bootstrap-scrollspy
-//= require bootstrap-tab
-//= require bootstrap-tooltip
-//= require bootstrap-popover
-//= require bootstrap-button
-//= require bootstrap-collapse
-//= require bootstrap-carousel
-//= require bootstrap-typeahead
+//= require twitter/bootstrap/transition
+//= require twitter/bootstrap/alert
+//= require twitter/bootstrap/modal
+//= require twitter/bootstrap/dropdown
+//= require twitter/bootstrap/scrollspy
+//= require twitter/bootstrap/tab
+//= require twitter/bootstrap/tooltip
+//= require twitter/bootstrap/popover
+//= require twitter/bootstrap/button
+//= require twitter/bootstrap/collapse
+//= require twitter/bootstrap/carousel
+//= require twitter/bootstrap/typeahead
+//= require twitter/bootstrap/affix
 ```
 
 ## Upgrade notes from 1.4
