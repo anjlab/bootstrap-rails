@@ -49,6 +49,16 @@ $gridGutterWidth: 10px;
 @import "twitter/bootstrap-responsive";
 ```
  NOTE: restart `pow` if you are using it.
+ 
+
+## Integration with Font-Awesome or Font-Awesome-More
+ 
+Font-Awesome and Font-Awesome-More offers more icons than the original bootstrap package, to integrate with them, the "sprites" module has to be excluded from bootstrap library. Simply reference to "twitter/bootstrap-no-stripes" and then add the reference to Font-Awesome or Font-Awesome-More.
+
+
+``` css
+*= require twitter/bootstrap-no-sprites
+```
 
 ## Javascripts
 
