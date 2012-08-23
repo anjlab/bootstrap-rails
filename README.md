@@ -28,7 +28,6 @@ Add necessary stylesheet file to app/assets/stylesheets/application.css
 
 ``` css
 *= require twitter/bootstrap
-*= require twitter/bootstrap-responsive
 ```
 
 You can override bootstrap variables:
