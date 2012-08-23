@@ -17,8 +17,7 @@ Gem::Specification.new do |gem|
   gem.version       = Bootstrap::Rails::VERSION
 
   gem.add_dependency "railties", ">= 3.0"
-  #gem.add_dependency "thor",     "~> 0.14"
-  gem.add_dependency "sass"
+  gem.add_dependency "sass", ">= 3.2"
   gem.add_development_dependency "bundler", ">= 1.0"
   gem.add_development_dependency "rails",   ">= 3.1"
 end
