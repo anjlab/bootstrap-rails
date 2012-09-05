@@ -8,7 +8,8 @@
   }
   // Negative indent the now static "fixed" navbar
   .navbar-fixed-top,
-  .navbar-fixed-bottom {
+  .navbar-fixed-bottom,
+  .navbar-static-top {
     margin-left: -20px;
     margin-right: -20px;
   }
@@ -56,8 +57,9 @@
   .row-fluid [class*="span"] {
     float: none;
     display: block;
-    width: auto;
+    width: 100%;
     margin-left: 0;
+    @include box-sizing(border-box);
   }
   .span12,
   .row-fluid .span12 {
@@ -84,6 +86,9 @@
   .input-append input[class*="span"] {
     display: inline-block; // redeclare so they don't wrap to new lines
     width: auto;
+  }
+  .controls-row [class*="span"] + [class*="span"] {
+    margin-left: 0;
   }
 
   // Modals
@@ -124,24 +129,26 @@
   }
 
   // Remove the horizontal form styles
-  .form-horizontal .control-group > label {
+  .form-horizontal {
+    .control-label {
     float: none;
     width: auto;
     padding-top: 0;
     text-align: left;
   }
   // Move over all input controls and content
-  .form-horizontal .controls {
+    .controls {
     margin-left: 0;
   }
   // Move the options list down to align with labels
-  .form-horizontal .control-list {
+    .control-list {
     padding-top: 0; // has to be padding because margin collaspes
   }
   // Move over buttons in .form-actions to align with .controls
-  .form-horizontal .form-actions {
+    .form-actions {
     padding-left: 10px;
     padding-right: 10px;
+  }
   }
 
   // Modals
