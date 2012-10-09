@@ -1,5 +1,5 @@
 /* ========================================================
- * bootstrap-tab.js v2.1.1
+ * bootstrap-tab.js v2.1.2
  * http://twitter.github.com/bootstrap/javascript.html#tabs
  * ========================================================
  * Copyright 2012 Twitter, Inc.
@@ -125,11 +125,9 @@
  /* TAB DATA-API
   * ============ */
 
-  $(function () {
-    $('body').on('click.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', function (e) {
-      e.preventDefault()
-      $(this).tab('show')
-    })
+  $(document).on('click.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
   })
 
 }(window.jQuery);
