@@ -57,6 +57,24 @@ $headingsFontFamily:    inherit !default; // empty to use BS default, $baseFontF
 $headingsFontWeight:    bold !default;    // instead of browser default, bold
 $headingsColor:         inherit !default; // empty to use BS default, $textColor
 
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+
+$fontSizeLarge:         $baseFontSize * 1.25 !default; // ~18px
+$fontSizeSmall:         $baseFontSize * 0.85 !default; // ~12px
+$fontSizeMini:          $baseFontSize * 0.75 !default; // ~11px
+
+$paddingLarge:          11px 19px !default; // 44px
+$paddingSmall:          2px 10px !default;  // 26px
+$paddingMini:           1px 6px !default;   // 24px
+
+$baseBorderRadius:      4px !default;
+$borderRadiusLarge:     6px !default;
+$borderRadiusSmall:     3px !default;
+
+
 // Tables
 // -------------------------
 $tableBackground:                   transparent !default; // overall background-color
@@ -92,10 +110,12 @@ $btnInverseBackgroundHighlight:     $grayDarker !default;
 // Forms
 // -------------------------
 $inputBackground:               $white !default;
-$inputBorder:                   #ccc !default;
-$inputBorderRadius:             3px !default;
+$inputBorder:                   #ccc;
+$inputBorderRadius:             $baseBorderRadius !default;
 $inputDisabledBackground:       $grayLighter !default;
-$formActionsBackground:         #f5f5f5 !default;
+$formActionsBackground:         #f5f5f5  !default;
+$inputHeight:                   $baseLineHeight + 10px !default; // base line-height + 8px vertical padding + 2px top/bottom border
+
 
 // Dropdowns
 // -------------------------
@@ -115,6 +135,7 @@ $dropdownLinkBackgroundHover:   $dropdownLinkBackgroundActive !default;
 
 // COMPONENT VARIABLES
 // --------------------------------------------------
+
 
 // Z-index master list
 // -------------------------
@@ -151,6 +172,7 @@ $wellBackground:                  #f5f5f5 !default;
 // Navbar
 // -------------------------
 $navbarCollapseWidth:             979px !default;
+$navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1 !default;
 
 $navbarHeight:                    40px !default;
 $navbarBackgroundHighlight:       #ffffff !default;

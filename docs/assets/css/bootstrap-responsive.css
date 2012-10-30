@@ -1,5 +1,5 @@
 /*
- * Bootstrap Responsive v2.1.1
+ * Bootstrap Responsive v2.2.0
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -178,6 +178,8 @@
       *margin-left: 2.51091%; }
     .row-fluid [class*="span"]:first-child {
       margin-left: 0; }
+    .row-fluid .controls-row [class*="span"] + [class*="span"] {
+      margin-left: 2.5641%; }
     .row-fluid .span1 {
       width: 5.98291%;
       *width: 5.92971%; }
@@ -454,6 +456,8 @@
       *margin-left: 2.70924%; }
     .row-fluid [class*="span"]:first-child {
       margin-left: 0; }
+    .row-fluid .controls-row [class*="span"] + [class*="span"] {
+      margin-left: 2.76243%; }
     .row-fluid .span1 {
       width: 5.8011%;
       *width: 5.74791%; }
@@ -643,6 +647,7 @@
     margin-left: 0; }
 
   [class*="span"],
+  .uneditable-input[class*="span"],
   .row-fluid [class*="span"] {
     float: none;
     display: block;
@@ -658,6 +663,9 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
+
+  .row-fluid [class*="offset"]:first-child {
+    margin-left: 0; }
 
   .input-large,
   .input-xlarge,
@@ -690,8 +698,10 @@
     right: 20px;
     width: auto;
     margin: 0; }
+    .modal.fade {
+      top: -100px; }
     .modal.fade.in {
-      top: auto; } }
+      top: 20px; } }
 @media (max-width: 480px) {
   .nav-collapse {
     -webkit-transform: translate3d(0, 0, 0); }
@@ -716,6 +726,16 @@
   .form-horizontal .form-actions {
     padding-left: 10px;
     padding-right: 10px; }
+
+  .media .pull-left,
+  .media .pull-right {
+    float: none;
+    display: block;
+    margin-bottom: 10px; }
+
+  .media-object {
+    margin-right: 0;
+    margin-left: 0; }
 
   .modal {
     top: 10px;
@@ -798,6 +818,10 @@
   .nav-collapse .dropdown-menu a:hover {
     background-color: #f2f2f2; }
 
+  .navbar-inverse .nav-collapse .nav > li > a,
+  .navbar-inverse .nav-collapse .dropdown-menu a {
+    color: #999999; }
+
   .navbar-inverse .nav-collapse .nav > li > a:hover,
   .navbar-inverse .nav-collapse .dropdown-menu a:hover {
     background-color: #111111; }
@@ -811,7 +835,7 @@
     top: auto;
     left: auto;
     float: none;
-    display: block;
+    display: none;
     max-width: none;
     margin: 0 15px;
     padding: 0;
@@ -823,6 +847,9 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none; }
+
+  .nav-collapse .open > .dropdown-menu {
+    display: block; }
 
   .nav-collapse .dropdown-menu:before,
   .nav-collapse .dropdown-menu:after {
