@@ -187,7 +187,7 @@
 // Mixin for form field states
 @mixin form-field-state($textColor: #555, $borderColor: #ccc, $backgroundColor: #f5f5f5) {
   // Set the text color
-  > label,
+  .control-label,
   .help-block,
   .help-inline {
     color: $textColor;
@@ -419,7 +419,7 @@
   background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
   background-image: -webkit-linear-gradient(left, $startColor, $endColor); // Safari 5.1+, Chrome 10+
   background-image: -o-linear-gradient(left, $startColor, $endColor); // Opera 11.10
-  background-image: linear-gradient(left, $startColor, $endColor); // Standard, IE10
+  background-image: linear-gradient(to right, $startColor, $endColor); // Standard, IE10
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=1); // IE9 and down
 }
@@ -429,7 +429,7 @@
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
   background-image: -webkit-linear-gradient(top, $startColor, $endColor); // Safari 5.1+, Chrome 10+
   background-image: -o-linear-gradient(top, $startColor, $endColor); // Opera 11.10
-  background-image: linear-gradient(top, $startColor, $endColor); // Standard, IE10
+  background-image: linear-gradient(to bottom, $startColor, $endColor); // Standard, IE10
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=0); // IE9 and down
 }
