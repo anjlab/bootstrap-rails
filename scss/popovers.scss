@@ -11,6 +11,7 @@
   display: none;
   width: 236px;
   padding: 1px;
+  text-align: left; // Reset given new insertion method
   background-color: $popoverBackground;
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
@@ -43,9 +44,6 @@
 
 .popover-content {
   padding: 9px 14px;
-  p, ul, ol {
-    margin-bottom: 0;
-  }
 }
 
 // Arrows

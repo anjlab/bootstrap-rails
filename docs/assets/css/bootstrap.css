@@ -1495,7 +1495,10 @@ legend + .control-group {
   margin-bottom: 0; }
 .form-horizontal input + .help-block,
 .form-horizontal select + .help-block,
-.form-horizontal textarea + .help-block {
+.form-horizontal textarea + .help-block,
+.form-horizontal .uneditable-input + .help-block,
+.form-horizontal .input-prepend + .help-block,
+.form-horizontal .input-append + .help-block {
   margin-top: 10px; }
 .form-horizontal .form-actions {
   padding-left: 180px; }
@@ -2952,15 +2955,25 @@ input[type="submit"].btn {
   border-color: #d6e9c6;
   color: #468847; }
 
+.alert-success h4 {
+  color: #468847; }
+
 .alert-danger,
 .alert-error {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48; }
 
+.alert-danger h4,
+.alert-error h4 {
+  color: #b94a48; }
+
 .alert-info {
   background-color: #d9edf7;
   border-color: #bce8f1;
+  color: #3a87ad; }
+
+.alert-info h4 {
   color: #3a87ad; }
 
 .alert-block {
@@ -2985,6 +2998,9 @@ input[type="submit"].btn {
 .nav > li > a:hover {
   text-decoration: none;
   background-color: #eeeeee; }
+
+.nav > li > a > img {
+  max-width: none; }
 
 .nav > .pull-right {
   float: right; }
@@ -3738,16 +3754,16 @@ input[type="submit"].btn {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px; }
-  .breadcrumb li {
+  .breadcrumb > li {
     display: inline-block;
     *display: inline;
     /* IE7 inline-block hack */
     *zoom: 1;
     text-shadow: 0 1px 0 white; }
-  .breadcrumb .divider {
+  .breadcrumb > .divider {
     padding: 0 5px;
     color: #ccc; }
-  .breadcrumb .active {
+  .breadcrumb > .active {
     color: #999999; }
 
 .pagination {
@@ -3975,6 +3991,7 @@ input[type="submit"].btn {
     line-height: 30px; }
 
 .modal-body {
+  position: relative;
   overflow-y: auto;
   max-height: 400px;
   padding: 15px; }
@@ -4081,6 +4098,7 @@ input[type="submit"].btn {
   display: none;
   width: 236px;
   padding: 1px;
+  text-align: left;
   background-color: white;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
@@ -4117,8 +4135,6 @@ input[type="submit"].btn {
 
 .popover-content {
   padding: 9px 14px; }
-  .popover-content p, .popover-content ul, .popover-content ol {
-    margin-bottom: 0; }
 
 .popover .arrow,
 .popover .arrow:after {
@@ -4636,37 +4652,37 @@ a.label:hover, a.badge:hover {
   width: 100%;
   position: relative; }
 
-.carousel > .item {
+.carousel-inner > .item {
   display: none;
   position: relative;
   -webkit-transition: 0.6s ease-in-out left;
   -moz-transition: 0.6s ease-in-out left;
   -o-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left; }
-.carousel > .item > img {
+.carousel-inner > .item > img {
   display: block;
   line-height: 1; }
-.carousel > .active,
-.carousel > .next,
-.carousel > .prev {
+.carousel-inner > .active,
+.carousel-inner > .next,
+.carousel-inner > .prev {
   display: block; }
-.carousel > .active {
+.carousel-inner > .active {
   left: 0; }
-.carousel > .next,
-.carousel > .prev {
+.carousel-inner > .next,
+.carousel-inner > .prev {
   position: absolute;
   top: 0;
   width: 100%; }
-.carousel > .next {
+.carousel-inner > .next {
   left: 100%; }
-.carousel > .prev {
+.carousel-inner > .prev {
   left: -100%; }
-.carousel > .next.left,
-.carousel > .prev.right {
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right {
   left: 0; }
-.carousel > .active.left {
+.carousel-inner > .active.left {
   left: -100%; }
-.carousel > .active.right {
+.carousel-inner > .active.right {
   left: 100%; }
 
 .carousel-control {
