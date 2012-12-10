@@ -5,7 +5,7 @@ namespace :twitter do
 
   desc "Pulls Twitter's Bootstrap Scss"
   task :pull do
-    if !system "git pull -s subtree twitter twb2rc"
+    if !system "git pull -s subtree twitter twb2"
       abort "Have to add twitter scss remote `git remote add -f twitter git@github.com:yury/bootstrap.git`"
     end
   end
