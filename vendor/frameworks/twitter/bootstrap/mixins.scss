@@ -293,6 +293,12 @@
        -o-transition-delay: $transition-delay;
           transition-delay: $transition-delay;
 }
+@mixin transition-duration($transition-duration) {
+  -webkit-transition-duration: $transition-duration;
+     -moz-transition-duration: $transition-duration;
+       -o-transition-duration: $transition-duration;
+          transition-duration: $transition-duration;
+}
 
 // Transformations
 @mixin rotate($degrees) {
@@ -444,7 +450,18 @@
   background-image: -webkit-linear-gradient($deg, $startColor, $endColor); // Safari 5.1+, Chrome 10+
   background-image: -o-linear-gradient($deg, $startColor, $endColor); // Opera 11.10
   background-image: linear-gradient($deg, $startColor, $endColor); // Standard, IE10
-  }
+}
+@mixin horizontal-three-colors($startColor: #00b3ee, $midColor: #7a43b6, $colorStop: 50%, $endColor: #c3325f) {
+  background-color: mix($midColor, $endColor, 80%);
+  background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from($startColor), color-stop($colorStop, $midColor), to($endColor));
+  background-image: -webkit-linear-gradient(left, $startColor, $midColor $colorStop, $endColor);
+  background-image: -moz-linear-gradient(left, $startColor, $midColor $colorStop, $endColor);
+  background-image: -o-linear-gradient(left, $startColor, $midColor $colorStop, $endColor);
+  background-image: linear-gradient(to right, $startColor, $midColor $colorStop, $endColor);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
 @mixin vertical-three-colors($startColor: #00b3ee, $midColor: #7a43b6, $colorStop: 50%, $endColor: #c3325f) {
   background-color: mix($midColor, $endColor, 80%);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), color-stop($colorStop, $midColor), to($endColor));
@@ -520,7 +537,7 @@
   @include reset-filter();
 
   // in these cases the gradient won't cover the background, so we override
-  &:hover, &:active, &.active, &.disabled, &[disabled] {
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
     color: $textColor;
     background-color: $endColor;
     *background-color: darken($endColor, 5%);
@@ -577,7 +594,6 @@
 @mixin grid-core-span ($columns, $gridColumnWidth, $gridGutterWidth) {
   width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
 }
-
 @mixin grid-core-span-x($columns, $gridColumnWidth, $gridGutterWidth) {
   @for $i from 1 through $columns {
     .span#{$i} { @include grid-core-span($i, $gridColumnWidth, $gridGutterWidth) }
@@ -610,7 +626,6 @@
   @include grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth);
   @include grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth);
 }
-
 @mixin grid-fluid-offset($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
   margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) + ($fluidGridGutterWidth*2);
   *margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / ($gridRowWidth / 1px) * 100 * 1%) + ($fluidGridGutterWidth*2) - (.5 / ($gridRowWidth / 1px) * 100 * 1%);
