@@ -1,5 +1,5 @@
 /*
- * Bootstrap Responsive v2.2.2
+ * Bootstrap Responsive v2.3.0
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -7,9 +7,6 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
-@-ms-viewport {
-  width: device-width; }
-
 .clearfix {
   *zoom: 1; }
   .clearfix:before, .clearfix:after {
@@ -25,6 +22,9 @@
   text-shadow: none;
   background-color: transparent;
   border: 0; }
+
+@-ms-viewport {
+  width: device-width; }
 
 .hidden {
   display: none;
@@ -65,6 +65,15 @@
     display: inherit !important; }
 
   .hidden-phone {
+    display: none !important; } }
+.visible-print {
+  display: none !important; }
+
+@media print {
+  .visible-print {
+    display: inherit !important; }
+
+  .hidden-print {
     display: none !important; } }
 @media (min-width: 1200px) {
   .row {
@@ -715,7 +724,7 @@
 
   input[type="checkbox"],
   input[type="radio"] {
-    border: 1px solid #ccc; }
+    border: 1px solid #cccccc; }
 
   .form-horizontal .control-label {
     float: none;
@@ -818,7 +827,9 @@
     margin-bottom: 2px; }
 
   .nav-collapse .nav > li > a:hover,
-  .nav-collapse .dropdown-menu a:hover {
+  .nav-collapse .nav > li > a:focus,
+  .nav-collapse .dropdown-menu a:hover,
+  .nav-collapse .dropdown-menu a:focus {
     background-color: #f2f2f2; }
 
   .navbar-inverse .nav-collapse .nav > li > a,
@@ -826,7 +837,9 @@
     color: #999999; }
 
   .navbar-inverse .nav-collapse .nav > li > a:hover,
-  .navbar-inverse .nav-collapse .dropdown-menu a:hover {
+  .navbar-inverse .nav-collapse .nav > li > a:focus,
+  .navbar-inverse .nav-collapse .dropdown-menu a:hover,
+  .navbar-inverse .nav-collapse .dropdown-menu a:focus {
     background-color: #111111; }
 
   .nav-collapse.in .btn-group {
