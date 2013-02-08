@@ -794,8 +794,7 @@
                   <code>&lt;th&gt;</code>
                 </td>
                 <td>
-                  {{_i}}Special table cell for column (or row, depending on scope and placement) labels{{/i}}<br>
-                  {{_i}}Must be used within a <code>&lt;thead&gt;</code>{{/i}}
+                  {{_i}}Special table cell for column (or row, depending on scope and placement) labels{{/i}}
                 </td>
               </tr>
               <tr>
@@ -1472,7 +1471,7 @@
 </pre>
 
           <h3>{{_i}}Form actions{{/i}}</h3>
-          <p>{{_i}}End a form with a group of actions (buttons). When placed within a <code>.form-horizontal</code>, the buttons will automatically indent to line up with the form controls.{{/i}}</p>
+          <p>{{_i}}End a form with a group of actions (buttons). When placed within a <code>.form-actions</code>, the buttons will automatically indent to line up with the form controls.{{/i}}</p>
           <form class="bs-docs-example">
             <div class="form-actions">
               <button type="submit" class="btn btn-primary">{{_i}}Save changes{{/i}}</button>
@@ -1523,6 +1522,7 @@
 
           <h3>{{_i}}Invalid inputs{{/i}}</h3>
           <p>{{_i}}Style inputs via default browser functionality with <code>:invalid</code>. Specify a <code>type</code>, add the <code>required</code> attribute if the field is not optional, and (if applicable) specify a <code>pattern</code>.{{/i}}</p>
+          <p>{{_i}}This is not available in versions of Internet Explorer 7-9 due to lack of support for CSS pseudo selectors.{{/i}}</p>
           <form class="bs-docs-example form-inline">
             <input class="span3" type="email" placeholder="test@example.com" required>
           </form>
