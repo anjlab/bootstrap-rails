@@ -182,6 +182,10 @@
   @include box-sizing(border-box); // Makes inputs behave like true block-level elements
 }
 
+.input-block-level {
+  @include input-block-level()
+}
+
 
 
 // Mixin for form field states
