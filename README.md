@@ -7,7 +7,7 @@ Note: if you are looking for bootstrapped date and time pickers please take a lo
 
 anjlab-bootstrap-rails project integrates Bootstrap CSS (with Sass flavour) and JS toolkits for Rails 3 projects
 
-[![SpellHub](http://spellhub.com/projects/status/69)](http://spellhub.com/projects/project/69)
+<a href="http://spellhub.com/projects/project/69"><img src="http://spellhub.com/projects/status/69" height="18"></a>
 
 ## Rails > 3.1
 Include Bootstrap in Gemfile;
