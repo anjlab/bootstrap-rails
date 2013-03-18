@@ -93,6 +93,11 @@ http://twitter.github.com/bootstrap
 Inspired by Seyhun Akyürek and his [twitter-bootstrap-rails gem](https://github.com/seyhunak/twitter-bootstrap-rails)
 
 
+## zhiyisoft Install 
+for Gemfile in app path
+gem "zhiyi-bootstrap-rails", :require => "bootstrap-rails",:path =>"../zhiyi-bootstrap-rails"
+gem "zhiyi-bootstrap-rails", :require => "bootstrap-rails",:git =>"git@github.com:zhiyisoft/bootstrap-rails.git"
+
 ## License
 Copyright (c) 2012 AnjLab
 
