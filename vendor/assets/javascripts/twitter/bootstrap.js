@@ -11,3 +11,4 @@
 //= require twitter/bootstrap/modal.js
 //= require twitter/bootstrap/tooltip.js
 //= require twitter/bootstrap/popover.js
+//= require twitter/tree.jquery.js
