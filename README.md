@@ -94,7 +94,7 @@ Inspired by Seyhun Akyürek and his [twitter-bootstrap-rails gem](https://github
 
 
 ## zhiyisoft Install 
- Gemfile
+for Gemfile in app path
 gem "zhiyi-bootstrap-rails", :require => "bootstrap-rails",:path =>"../zhiyi-bootstrap-rails"
 gem "zhiyi-bootstrap-rails", :require => "bootstrap-rails",:git =>"git@github.com:zhiyisoft/bootstrap-rails.git"
 
