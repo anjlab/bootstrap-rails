@@ -1,66 +1,61 @@
 #!/usr/bin/env rake
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
+require 'rake/testtask'
 
 namespace :twitter do
 
   desc "Pulls Twitter's Bootstrap Scss"
   task :pull do
-    if !system "git pull -s subtree twitter twb2"
-      abort "Have to add twitter scss remote `git remote add -f twitter git@github.com:yury/bootstrap.git`"
+    if !system "cd bootstrap && git pull"
+      abort "...."
     end
   end
 
-
-  TW_IMGS = FileList["vendor/twitter/img/*.*"]
-  ASSETS_IMGS = TW_IMGS.pathmap("vendor/assets/images/twitter/%f")
-  ASSETS_IMGS.zip(TW_IMGS).each do |target, source|
+  BS_FONTS     = FileList["bootstrap/fonts/*.*"]
+  ASSETS_FONTS = BS_FONTS.pathmap("vendor/assets/fonts/twitter/%f")
+  ASSETS_FONTS.zip(BS_FONTS).each do |target, source|
     file target => [source] { cp source, target, verbose: true }
   end
 
-  TW_JS     = FileList["vendor/twitter/js/*.*"]
-  ASSETS_JS = TW_JS.pathmap("vendor/assets/javascripts/twitter/bootstrap/%{bootstrap-,}f")
-  ASSETS_JS.zip(TW_JS).each do |target, source|
+  BS_JS     = FileList["bootstrap/js/*.*"]
+  ASSETS_JS = BS_JS.pathmap("vendor/assets/javascripts/twitter/bootstrap/%f")
+  ASSETS_JS.zip(BS_JS).each do |target, source|
     file target => [source] { cp source, target, verbose: true }
   end
 
-  TW_SCSS = FileList["vendor/twitter/scss/*.*"]
-  ASSETS_SCSS = TW_SCSS.pathmap("vendor/frameworks/twitter/bootstrap/%f")
-  ASSETS_SCSS.zip(TW_SCSS).each do |target, source|
+  BS_SCSS = FileList["bootstrap/scss/*.*"]
+  ASSETS_SCSS = BS_SCSS.pathmap("vendor/assets/stylesheets/twitter/bootstrap/_%f")
+  ASSETS_SCSS.zip(BS_SCSS).each do |target, source|
+    target.gsub!(/__/, '_')
     file target => [source] { cp source, target, verbose: true }
   end
 
-  desc "Update Twitter's Bootstrap Images"
-  task :imgs => ASSETS_IMGS
+  desc "Update Twitter's Bootstrap Fonts"
+  task :fonts => ASSETS_FONTS
 
   desc "Update Twitter's Bootstrap JS"
   task :js => ASSETS_JS do
     js = {}
-    ASSETS_JS.pathmap("%f").each do |f|
-      js[f] = 1
-    end
+    ASSETS_JS.pathmap("%f").each { |f| js[f] = 1 }
 
     # dependencies
     js["transition.js"]  = 0
     js["tooltip.js"]     = 2
     js["popover.js"]     = 3
-    
+
     list = js.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
     File.write "vendor/assets/javascripts/twitter/bootstrap.js", list.map {|f| "//= require twitter/bootstrap/#{f}"}.join("\n")
   end
 
   desc "Update Twitter's Bootstrap SCSS"
   task :scss => ASSETS_SCSS do
-    File.write "vendor/frameworks/twitter/bootstrap.scss", '@import "bootstrap/bootstrap.scss";'
-    File.write "vendor/assets/stylesheets/twitter/bootstrap.scss", '@import "twitter/bootstrap/bootstrap.scss";'
-    File.write "vendor/assets/stylesheets/twitter/bootstrap-responsive.scss", '@import "twitter/bootstrap/responsive.scss";'
+    File.write "vendor/assets/stylesheets/twitter/bootstrap.scss", '@import "twitter/bootstrap/bootstrap";'
   end
 
   desc "Update Twitter's Bootstrap Assets"
-  task :assets => [:pull, :imgs, :scss, :js]
-  
-end
+  task :assets => [:pull, :fonts, :scss, :js]
 
-require 'rake/testtask'
+end
 
 Rake::TestTask.new do |t|
   t.libs << "test"
