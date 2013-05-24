@@ -52,8 +52,29 @@ namespace :twitter do
     File.write "vendor/assets/stylesheets/twitter/bootstrap.scss", '@import "twitter/bootstrap/bootstrap";'
   end
 
+  desc "Update Twitter's icons"
+  task :icons do
+    vars_path = 'vendor/assets/stylesheets/twitter/bootstrap/_variables.scss'
+    variables = File.read vars_path
+    variables.sub!(/^\$glyphicons-font-path:\s+".*"\s!default;/, "$glyphicons-font-path:          \"twitter\" !default;")
+    File.write(vars_path, variables)
+
+    glyphicons_path  = 'vendor/assets/stylesheets/twitter/bootstrap/_glyphicons.scss'
+    glyphicons = File.read glyphicons_path
+    glyphicons.gsub!(/url\('\#{\$glyphicons-font-path\}\//, "font-url('\#{$glyphicons-font-path}/")
+    File.write(glyphicons_path, glyphicons)
+  end
+
+  desc "Clean vendored files"
+  task :clean do
+    FileUtils.rm_rf 'vendor/assets'
+    FileUtils.mkpath 'vendor/assets/fonts/twitter'
+    FileUtils.mkpath 'vendor/assets/javascripts/twitter/bootstrap'
+    FileUtils.mkpath 'vendor/assets/stylesheets/twitter/bootstrap'
+  end
+
   desc "Update Twitter's Bootstrap Assets"
-  task :assets => [:pull, :fonts, :scss, :js]
+  task :assets => [:pull, :clean, :fonts, :scss, :js, :icons]
 
 end
 
