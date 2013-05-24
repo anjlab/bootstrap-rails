@@ -1,2 +1,2 @@
-require "bootstrap-rails"
+require 'bootstrap-rails'
 require 'test/unit'
