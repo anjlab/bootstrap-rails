@@ -1,26 +1,20 @@
-# Twitter Bootstrap v2.3.1.0 for Rails 3/4
+# Twitter Bootstrap v3.0.0.alpha1 for Rails 3/4
 Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.
 It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
 
 Note: if you are looking for bootstrapped date and time pickers please take a look at [anjlab-widgets](https://github.com/anjlab/anjlab-widgets) gem.
-
 
 anjlab-bootstrap-rails project integrates Bootstrap CSS (with Sass flavour) and JS toolkits for Rails 3 projects
 
 <a href="http://spellhub.com/projects/project/69"><img src="http://spellhub.com/projects/status/69" height="18"></a>
 
 ## Rails > 3.1
-Include Bootstrap in Gemfile;
-
-``` ruby
-gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
-```
-
-or you can install from latest build;
+You can install from latest build just for testing right now;
 
 ``` ruby
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :git => 'git://github.com/anjlab/bootstrap-rails.git'
+                              :git => 'git://github.com/anjlab/bootstrap-rails.git',
+                              :branch => '3.0.0'
 ```
 
 and run bundle install.
@@ -35,20 +29,17 @@ Add necessary stylesheet file to app/assets/stylesheets/application.css
 
 You can override bootstrap variables:
 
- 1. replace `*= require twitter/bootstrap` with `*= require app_bootstrap`
- 2. create `app_bootstrap.css.scss` :
+1. rename application.css to application.css.scss
+2. override vars above `@import "twitter/bootstrap";`
 
 ```scss
-// change colors
-$linkColor: red;
 
-// change grid
-$gridColumnWidth: 70px;
-$gridGutterWidth: 10px;
+// change colors
+$link-color: red;
 
 // import original bootstrap
 @import "twitter/bootstrap";
-@import "twitter/bootstrap-responsive";
+
 ```
  NOTE: restart `pow` if you are using it.
 
@@ -76,16 +67,7 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 //= require twitter/bootstrap/affix
 ```
 
-## Upgrade notes from 1.4
 
- - [Twitter Bootstrap Upgrade](http://twitter.github.com/bootstrap/upgrading.html)
- - rm -rf tmp/cache
-
-## For Developers
-
- - Fork this repo if you want fix rails integration bug
- - Fork [Sass repo](https://github.com/yury/bootstrap) if you want fix SASS bug
-        
 ## Thanks
 Thanks Twitter for Bootstrap
 http://twitter.github.com/bootstrap
@@ -94,7 +76,7 @@ Inspired by Seyhun Akyürek and his [twitter-bootstrap-rails gem](https://github
 
 
 ## License
-Copyright (c) 2012 AnjLab
+Copyright (c) 2013 AnjLab
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
