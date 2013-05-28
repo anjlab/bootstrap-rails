@@ -39,9 +39,8 @@ namespace :twitter do
     ASSETS_JS.pathmap("%f").each { |f| js[f] = 1 }
 
     # dependencies
-    js["transition.js"]  = 0
-    js["tooltip.js"]     = 2
-    js["popover.js"]     = 3
+    order = %w{transition.js alert.js button.js carousel.js collapse.js dropdown.js modal.js tooltip.js popover.js scrollspy.js tab.js affix.js}
+    order.each_with_index {|o, i| js[o] = i }
 
     list = js.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
     File.write "vendor/assets/javascripts/twitter/bootstrap.js", list.map {|f| "//= require twitter/bootstrap/#{f}"}.join("\n")
