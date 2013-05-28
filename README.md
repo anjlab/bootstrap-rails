@@ -67,6 +67,9 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 //= require twitter/bootstrap/affix
 ```
 
+## Extending
+
+- [Example of grid shortcuts and medium column classes](https://gist.github.com/yury/5662144)
 
 ## Thanks
 Thanks Twitter for Bootstrap
