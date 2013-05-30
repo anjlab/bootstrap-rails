@@ -12,19 +12,19 @@ namespace :twitter do
   end
 
   BS_FONTS     = FileList["bootstrap/fonts/*.*"]
-  ASSETS_FONTS = BS_FONTS.pathmap("vendor/assets/fonts/twitter/%f")
+  ASSETS_FONTS = BS_FONTS.pathmap("app/assets/fonts/twitter/%f")
   ASSETS_FONTS.zip(BS_FONTS).each do |target, source|
     file target => [source] { cp source, target, verbose: true }
   end
 
   BS_JS     = FileList["bootstrap/js/*.*"]
-  ASSETS_JS = BS_JS.pathmap("vendor/assets/javascripts/twitter/bootstrap/%f")
+  ASSETS_JS = BS_JS.pathmap("app/assets/javascripts/twitter/bootstrap/%f")
   ASSETS_JS.zip(BS_JS).each do |target, source|
     file target => [source] { cp source, target, verbose: true }
   end
 
   BS_SCSS = FileList["bootstrap/scss/*.*"]
-  ASSETS_SCSS = BS_SCSS.pathmap("vendor/assets/stylesheets/twitter/bootstrap/_%f")
+  ASSETS_SCSS = BS_SCSS.pathmap("app/assets/stylesheets/twitter/bootstrap/_%f")
   ASSETS_SCSS.zip(BS_SCSS).each do |target, source|
     target.gsub!(/__/, '_')
     file target => [source] { cp source, target, verbose: true }
@@ -43,33 +43,33 @@ namespace :twitter do
     order.each_with_index {|o, i| js[o] = i }
 
     list = js.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
-    File.write "vendor/assets/javascripts/twitter/bootstrap.js", list.map {|f| "//= require twitter/bootstrap/#{f}"}.join("\n")
+    File.write "app/assets/javascripts/twitter/bootstrap.js", list.map {|f| "//= require twitter/bootstrap/#{f}"}.join("\n")
   end
 
   desc "Update Twitter's Bootstrap SCSS"
   task :scss => ASSETS_SCSS do
-    File.write "vendor/assets/stylesheets/twitter/bootstrap.scss", '@import "twitter/bootstrap/bootstrap";'
+    File.write "app/assets/stylesheets/twitter/bootstrap.scss", '@import "twitter/bootstrap/bootstrap";'
   end
 
   desc "Update Twitter's icons"
   task :icons do
-    vars_path = 'vendor/assets/stylesheets/twitter/bootstrap/_variables.scss'
+    vars_path = 'app/assets/stylesheets/twitter/bootstrap/_variables.scss'
     variables = File.read vars_path
     variables.sub!(/^\$glyphicons-font-path:\s+".*"\s!default;/, "$glyphicons-font-path:          \"twitter\" !default;")
     File.write(vars_path, variables)
 
-    glyphicons_path  = 'vendor/assets/stylesheets/twitter/bootstrap/_glyphicons.scss'
+    glyphicons_path  = 'app/assets/stylesheets/twitter/bootstrap/_glyphicons.scss'
     glyphicons = File.read glyphicons_path
     glyphicons.gsub!(/url\('\#{\$glyphicons-font-path\}\//, "font-url('\#{$glyphicons-font-path}/")
     File.write(glyphicons_path, glyphicons)
   end
 
-  desc "Clean vendored files"
+  desc "Clean gem assets files"
   task :clean do
-    FileUtils.rm_rf 'vendor/assets'
-    FileUtils.mkpath 'vendor/assets/fonts/twitter'
-    FileUtils.mkpath 'vendor/assets/javascripts/twitter/bootstrap'
-    FileUtils.mkpath 'vendor/assets/stylesheets/twitter/bootstrap'
+    FileUtils.rm_rf 'app/assets'
+    FileUtils.mkpath 'app/assets/fonts/twitter'
+    FileUtils.mkpath 'app/assets/javascripts/twitter/bootstrap'
+    FileUtils.mkpath 'app/assets/stylesheets/twitter/bootstrap'
   end
 
   desc "Update Twitter's Bootstrap Assets"

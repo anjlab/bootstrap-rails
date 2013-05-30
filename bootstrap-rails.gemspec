@@ -10,7 +10,6 @@ Gem::Specification.new do |gem|
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
-  gem.files.reject! { |fn| fn.include? "vendor/twitter" } 
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = "anjlab-bootstrap-rails"
   gem.require_paths = ["lib"]
