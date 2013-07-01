@@ -15,7 +15,7 @@ You can install from latest build just for testing right now;
 
 ``` ruby
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :git => 'git://github.com/anjlab/bootstrap-rails.git',
+                              :github => 'anjlab/bootstrap-rails',
                               :branch => '3.0.0'
 ```
 
