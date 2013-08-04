@@ -33,8 +33,9 @@ namespace :twitter do
     order = %w{transition.js alert.js button.js carousel.js collapse.js dropdown.js modal.js tooltip.js popover.js scrollspy.js tab.js affix.js}
     order.each_with_index {|o, i| js[o] = i }
 
-    list = js.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| p[0]}
-    File.write "app/assets/javascripts/twitter/bootstrap.js", list.map {|f| "//= require twitter/bootstrap/#{f}"}.join("\n")
+    list = js.to_a.sort {|a,b| a[1] <=> b[1]}.map{|p| "twitter/bootstrap/#{p[0]}"}
+    list << "holder.js"
+    File.write "app/assets/javascripts/twitter/bootstrap.js", list.map {|f| "//= require #{f}"}.join("\n")
   end
 
   desc "Update Twitter's Bootstrap SCSS"
