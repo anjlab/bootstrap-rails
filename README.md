@@ -65,7 +65,6 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/collapse
 //= require twitter/bootstrap/carousel
-//= require twitter/bootstrap/typeahead
 //= require twitter/bootstrap/affix
 ```
 
