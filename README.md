@@ -23,16 +23,9 @@ and run bundle install.
 
 ## Stylesheets
 
-Add necessary stylesheet file to app/assets/stylesheets/application.css
-
-``` css
-*= require twitter/bootstrap
-```
-
-You can override bootstrap variables:
-
 1. rename application.css to application.css.scss
-2. override vars above `@import "twitter/bootstrap";`
+2. import twitter bootstrap `@import "twitter/bootstrap";`
+3. You can override vars above `@import "twitter/bootstrap";`
 
 ```scss
 
