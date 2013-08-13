@@ -23,8 +23,8 @@ and run bundle install.
 
 ## Stylesheets
 
-1. rename application.css to application.css.scss
-2. import twitter bootstrap `@import "twitter/bootstrap";`
+1. Rename application.css to application.css.scss
+2. Import twitter bootstrap `@import "twitter/bootstrap";`
 3. You can override vars above `@import "twitter/bootstrap";`
 
 ```scss
