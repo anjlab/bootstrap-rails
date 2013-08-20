@@ -1,20 +1,25 @@
-# Twitter Bootstrap v3.0.0.rc2 for Rails 3/4
+# Twitter Bootstrap v3.0.0 for Rails 3/4
 Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.
 It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
 
 Note: if you are looking for bootstrapped date and time pickers please take a look at [anjlab-widgets](https://github.com/anjlab/anjlab-widgets) gem.
 
-anjlab-bootstrap-rails project integrates Bootstrap CSS (with Sass flavour) and JS toolkits for Rails 3 projects
+anjlab-bootstrap-rails project integrates Bootstrap CSS (with Sass flavour) and JS toolkits for Rails 3/4 projects
 
-<a href="http://spellhub.com/projects/project/69"><img src="http://spellhub.com/projects/status/69" height="18"></a>
 
 ## Rails > 3.1
-You can install from latest build just for testing right now;
 
+In your Gemfile
 ``` ruby
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :github => 'anjlab/bootstrap-rails',
-                              :branch => '3.0.0'
+                              :github => 'anjlab/bootstrap-rails'
+```
+
+You can install from latest build via git
+
+``` ruby
+
+gem 'anjlab-bootstrap-rails', '>= 3.0.0.0'
 ```
 
 and run bundle install.
