@@ -53,6 +53,11 @@ namespace :twitter do
     variables = File.read vars_path
     variables.sub!(/^\$icon-font-path:\s+".*"\s!default;/, "$icon-font-path:          \"twitter/\" !default;")
     File.write(vars_path, variables)
+
+    icons_path = 'app/assets/stylesheets/twitter/bootstrap/_glyphicons.scss'
+    icons = File.read icons_path
+    icons.gsub!(/url\(/, "font-url(")
+    File.write(icons_path, icons)
   end
 
   desc "Update Twitter's Bootstrap SCSS"
