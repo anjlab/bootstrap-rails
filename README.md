@@ -19,7 +19,7 @@ You can install from latest build via git
 
 ``` ruby
 
-gem 'anjlab-bootstrap-rails', '>= 3.0.0.0'
+gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 ```
 
 and run bundle install.
