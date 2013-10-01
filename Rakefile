@@ -56,7 +56,7 @@ namespace :twitter do
 
     icons_path = 'app/assets/stylesheets/twitter/bootstrap/_glyphicons.scss'
     icons = File.read icons_path
-    icons.gsub!(/url\(/, "font-url(")
+    icons.gsub!(/url\((.*)\)/, 'url(asset_path(\1))')
     File.write(icons_path, icons)
   end
 
