@@ -438,7 +438,6 @@
     &.#{$state} > td,
     &.#{$state} > th {
       background-color: $background;
-      border-color: $border;
     }
   }
 
@@ -450,7 +449,6 @@
     &.#{$state}:hover > td,
     &.#{$state}:hover > th {
       background-color: darken($background, 5%);
-      border-color: darken($border, 5%);
     }
   }
 }
