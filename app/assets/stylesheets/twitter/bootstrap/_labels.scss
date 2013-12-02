@@ -30,6 +30,12 @@
   }
 }
 
+// Quick fix for labels in buttons
+.btn .label {
+  position: relative;
+  top: -1px;
+}
+
 // Colors
 // Contextual variations (linked labels get darker on :hover)
 
