@@ -1,5 +1,5 @@
-# Twitter Bootstrap v3.0.2 for Rails 3/4
-Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.
+# Bootstrap v3.0.2 for Rails 3/4
+Bootstrap is a toolkit originated at Twitter that's designed to kickstart development of webapps and sites.
 It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
 
 Note: if you are looking for bootstrapped date and time pickers please take a look at [anjlab-widgets](https://github.com/anjlab/anjlab-widgets) gem.
@@ -27,7 +27,7 @@ and run bundle install.
 ## Stylesheets
 
 1. Rename application.css to application.css.scss
-2. Import twitter bootstrap `@import "twitter/bootstrap";`
+2. Import bootstrap `@import "twitter/bootstrap";`
 3. You can override vars above `@import "twitter/bootstrap";`
 
 ```scss
@@ -46,7 +46,7 @@ $link-color: red;
 Add necessary javascript(s) files to app/assets/javascripts/application.js
 
 ``` javascript
-// Include all twitter's javascripts
+// Include all bootstrap javascripts
 //= require twitter/bootstrap
 
 // Or peek any of them yourself
@@ -70,7 +70,7 @@ Add necessary javascript(s) files to app/assets/javascripts/application.js
 
 ## Thanks
 Thanks Twitter for Bootstrap
-http://twitter.github.com/bootstrap
+http://getbootstrap.com
 
 Inspired by Seyhun Akyürek and his [twitter-bootstrap-rails gem](https://github.com/seyhunak/twitter-bootstrap-rails)
 
