@@ -4,7 +4,7 @@ require 'rake/testtask'
 
 namespace :twitter do
 
-  desc "Pulls Twitter's Bootstrap Scss"
+  desc "Pulls Bootstrap Scss"
   task :pull do
     if !system "cd bootstrap && git pull"
       abort "...."
@@ -30,10 +30,10 @@ namespace :twitter do
     file target => [source] { cp source, target, verbose: true }
   end
 
-  desc "Update Twitter's Bootstrap Fonts"
+  desc "Update Bootstrap Fonts"
   task :fonts => ASSETS_FONTS
 
-  desc "Update Twitter's Bootstrap JS"
+  desc "Update Bootstrap JS"
   task :js => ASSETS_JS do
     js = {}
     ASSETS_JS.pathmap("%f").each { |f| js[f] = 1 }
@@ -46,7 +46,7 @@ namespace :twitter do
     File.write "app/assets/javascripts/twitter/bootstrap.js", list.map {|f| "//= require #{f}"}.join("\n")
   end
 
-  desc "Update Twitter's icons"
+  desc "Update Bootstrap Glyphicons icons"
   task :icons do
     vars_path = 'app/assets/stylesheets/twitter/bootstrap/_variables.scss'
     variables = File.read vars_path
@@ -59,7 +59,7 @@ namespace :twitter do
     File.write(icons_path, icons)
   end
 
-  desc "Update Twitter's Bootstrap SCSS"
+  desc "Update Bootstrap SCSS"
   task :scss => ASSETS_SCSS do
     File.write "app/assets/stylesheets/twitter/bootstrap.scss", '@import "twitter/bootstrap/bootstrap";'
   end
@@ -72,7 +72,7 @@ namespace :twitter do
     FileUtils.mkpath 'app/assets/stylesheets/twitter/bootstrap'
   end
 
-  desc "Update Twitter's Bootstrap Assets"
+  desc "Update Bootstrap Assets"
   task :assets => [:pull, :clean, :fonts, :scss, :js, :icons]
 
 end
