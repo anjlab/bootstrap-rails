@@ -1,4 +1,4 @@
-# Bootstrap v3.0.2 for Rails 3/4
+# Bootstrap v3.0.3 for Rails 3/4
 Bootstrap is a toolkit originated at Twitter that's designed to kickstart development of webapps and sites.
 It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
 
@@ -19,7 +19,7 @@ You can install from latest build via git
 
 ``` ruby
 
-gem 'anjlab-bootstrap-rails', '~> 3.0.2.0', :require => 'bootstrap-rails'
+gem 'anjlab-bootstrap-rails', '~> 3.0.3.0', :require => 'bootstrap-rails'
 ```
 
 and run bundle install.
